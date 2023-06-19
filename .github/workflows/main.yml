@@ -15,4 +15,4 @@ jobs:
           username: ${{ secrets.username }}
           password: ${{ secrets.password }}
           local-dir: ./
-          server-dir: /public_html/arlington-high.com
+          server-dir: /public_html/arlington-high.com/
