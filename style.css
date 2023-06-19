@@ -3,6 +3,9 @@
   }
   
   .discount-container {
+    
+border: 1px solid red;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -11,12 +14,18 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background: #023047;
-    background-image: radial-gradient(
+    background: url(./bg.jpg);
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;              /* optional, center the image */
+
+    /* background: #023047; */
+    /* background-image: radial-gradient(
       circle 610px at 5.2% 51%,
       rgb(5, 8, 114) 0%,
       rgb(7, 3, 53) 97%
-    );
+    ); */
+    /* background-image: url('./bg.jpg') center cover; */
     color: #fff;
     font-family: "Inter", sans-serif;
     padding: 8px 0;

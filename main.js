@@ -14,10 +14,10 @@ const setCookie = (name, value, duration) => {
   document.cookie = `${name} = ${value};expires=${expires.toUTCString()};path=/`;
 };
 
-closeBtn.addEventListener("click", () => {
-  discountContainer.style.display = "none";
-  setCookie("discountClosed", "true", 24);
-});
+// closeBtn.addEventListener("click", () => {
+//   discountContainer.style.display = "none";
+//   setCookie("discountClosed", "true", 24);
+// });
 
 if (document.cookie.indexOf("discountClosed=true") !== -1) {
   discountContainer.style.display = "none";
