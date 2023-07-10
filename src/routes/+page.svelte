@@ -65,7 +65,7 @@
 		let cards = gsap.utils.toArray('.services__card');
 
 		cards.forEach((card) => {
-			gsap.fromTo(card, { x: '-100px' }, { x: 0, scrollTrigger: card,scrub:2 });
+			gsap.fromTo(card, { x: '-100px' }, { x: 0, scrollTrigger: card, scrub: 2 });
 		});
 	});
 </script>
@@ -184,7 +184,7 @@
 			</div>
 		</div>
 		<div class="admission">
-			<div class="img">
+			<div class="img student">
 				<img src={student} alt="" srcset="" />
 			</div>
 			<div class="info">
@@ -199,13 +199,11 @@
 						exercitationem dicta soluta commodi cum iusto, nulla, voluptas maxime aspernatur quis
 						doloremque itaque porro error.
 					</div>
-					<!-- <a class="apply" href="">Apply now</a> -->
 					<Button title="Apply now" link="#" style="normal" primary={true} />
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<Footer />
 </div>
 
@@ -238,7 +236,8 @@
 	}
 
 	.wrapper_tr {
-		margin: 0 auto;
+		width: 100%;
+		/* margin: 0 auto; */
 	}
 	a.apply {
 		background: var(--primary-color);
@@ -250,6 +249,7 @@
 		width: 80%;
 		margin: 0 auto;
 		display: flex;
+		flex-wrap: wrap-reverse;
 		margin-top: 1rem;
 	}
 	.img {
@@ -284,8 +284,6 @@
 	}
 
 	.wrapper {
-		margin-left: 160px;
-		width: calc(100% - 160px);
 	}
 	.services {
 		width: 80%;
@@ -293,7 +291,7 @@
 		border-radius: 2px;
 		/* padding: 2rem; */
 		display: flex;
-		justify-content: space-around;
+		flex-wrap: wrap-reverse;
 		align-items: center;
 	}
 
@@ -309,7 +307,7 @@
 	}
 
 	.services__card {
-		flex: 1;
+		flex: 1 1 200px;
 		color: white;
 		background: var(--secondary-color);
 		display: flex;
@@ -324,6 +322,14 @@
 		font-weight: 300;
 		font-size: smaller;
 		color: white;
+	}
+	@media (width < 1500px) {
+		.img.student {
+			display: none !important;
+		}
+		/* .img {
+			display: none !important;
+		} */
 	}
 	@media (width < 1000px) {
 		span {
@@ -341,6 +347,33 @@
 	}
 
 	@media (width < 750px) {
+		.info__content {
+			gap: 0.4rem !important;
+			padding: 1rem !important;
+		}
+		.info__title {
+			font-weight: bold;
+			font-size: 2rem;
+		}
+		.info__subtitle {
+			color: var(--primary-color);
+			font-weight: 400;
+			width: fit-content;
+			margin-top: 0.2rem;
+		}
+		.info__description {
+			margin-top: 0.8rem;
+			font-weight: 300;
+			font-size: 0.8rem;
+		}
+		.img.student {
+			display: none !important;
+			flex: unset;
+		}
+		.wrapper {
+			margin-left: unset !important;
+			width: 100vw !important;
+		}
 		.right-banner {
 			position: absolute !important;
 			height: 50% !important;
@@ -365,6 +398,7 @@
 		}
 		.hero {
 			height: calc(100vh - 75px) !important;
+			width: 100%;
 		}
 	}
 	a.apply {

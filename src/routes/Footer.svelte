@@ -57,37 +57,38 @@
 		<a href="#facebook">
 			<i class="fa-brands fa-facebook fa-lg" />
 		</a>
-        <a href="#instagram" >
-            <i class="fa-brands fa-instagram fa-lg"></i>
-        </a>
-        <a href="#twitter">
+		<a href="#instagram">
+			<i class="fa-brands fa-instagram fa-lg" />
+		</a>
+		<a href="#twitter">
 			<i class="fa-brands fa-twitter fa-lg" />
 		</a>
 	</div>
 </div>
 
 <style>
-    span {
-        color: white;
-        font-weight: 400;
-    }
-    span.agency {
-        font-weight: 700;
-    }
+	span {
+		color: white;
+		font-weight: 400;
+	}
+	span.agency {
+		font-weight: 700;
+	}
 	.footer__social {
 		padding: 0.5rem;
 		background: var(--primary-color);
 		display: flex;
 		justify-content: space-around;
 	}
-    .socials {
-        display: flex;
-        gap: 3rem;
-    }
+	.socials {
+		display: flex;
+		gap: 3rem;
+	}
 	.footer {
 		display: flex;
+		width: 100%;
 		flex-wrap: wrap;
-		margin: 0 auto;
+		/* margin: 0 auto; */
 		margin-top: 2rem;
 
 		padding: 2rem;

@@ -1,7 +1,7 @@
 <script>
 	import svgLogo from '$lib/images/github.svg';
-	import logo from '$lib/images/logo.png'
-	import Arlingtonlogo from '$lib/images/arlington-logo.svg'
+	import logo from '$lib/images/logo.png';
+	import Arlingtonlogo from '$lib/images/arlington-logo.svg';
 	import gsap from 'gsap';
 	import { onMount } from 'svelte';
 
@@ -52,10 +52,10 @@
 
 <nav>
 	<img src={Arlingtonlogo} alt="" srcset="" class="logo" />
+	<i class="fa-solid fa-magnifying-glass fa-xl" />
 	<a href="#" on:click={() => toggleMenu()}>
 		<i class="fa-solid fa-bars fa-xl" />
 	</a>
-	<i class="fa-solid fa-magnifying-glass fa-xl" />
 </nav>
 <div class="menu">
 	<div class="menu__sidebar">
@@ -78,13 +78,7 @@
 		color: black;
 	}
 	.logo {
-	scale: 5;
-	}
-	@media (width < 750px) {
-		nav {
-			position: relative !important;
-			height: 75px !important;
-		}
+		scale: 5;
 	}
 
 	ul {
@@ -123,15 +117,15 @@
 	}
 
 	nav {
-		background: #FFF6F4;
-		position: fixed;
-		width: 160px;
-		height: 100%;
+		background: #fff6f4;
+		position: relative;
+		width: 100%;
+		height: 75px;
 		left: 0;
 		top: 0;
 		z-index: 999;
 		display: flex;
-		flex-direction: column;
+		/* flex-direction: ro; */
 		justify-content: space-around;
 		align-items: center;
 	}
