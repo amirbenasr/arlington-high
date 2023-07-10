@@ -35,29 +35,41 @@
 			</div>
 		</div>
 		<div class="services__card">
-			<div class="services__logo" />
+			<div class="services__logo">
+				<i class="fa-solid fa-person-skating fa-2xl" />
+			</div>
 			<div class="services__header">
 				<span class="title">Sports</span>
 				<span class="subtitle">Overall in here</span>
 			</div>
 		</div>
 		<div class="services__card">
-			<div class="services__logo" />
+			<div class="services__logo">
+				<i class="fa-solid fa-share-nodes fa-2xl" />
+			</div>
 			<div class="services__header">
 				<span class="title">Social</span>
 				<span class="subtitle">Overall in here</span>
 			</div>
 		</div>
 	</div>
+	<div class="admission" />
 </div>
 
 <style>
+	.admission {
+		width: 100%;
+	}
 	.wrapper {
 		margin-left: 160px;
 	}
 	.services {
-		margin-top: 2rem;
-		background: grey !important;
+		border: 1px solid black;
+		border-radius: 2px;
+		padding: 2rem;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
 	}
 
 	.services__header {
@@ -67,13 +79,17 @@
 
 	.services__card {
 		/* color: black */
-		height: 15rem;
 		background: white;
 		display: flex;
-		flex: 1;
+		gap: 1rem;
+		align-items: center;
+		padding: 1rem;
 	}
 	span.title {
 		color: black;
+	}
+	span.subtitle {
+		color: grey;
 	}
 	@media (width < 1000px) {
 		span {
@@ -177,12 +193,5 @@
 		height: 100%;
 		right: 0;
 		top: 0;
-	}
-	.services {
-		/* transform: translateY(-50px); */
-		display: flex;
-		width: 100%;
-		height: 20vh;
-		z-index: 9999;
 	}
 </style>
