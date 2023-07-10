@@ -1,7 +1,7 @@
 <script>
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
-	import bg from '$lib/images/bg-school.jpg'
+	import bg from '$lib/images/bg-school.jpg';
 </script>
 
 <!-- <svelte:head>
@@ -9,67 +9,110 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head> -->
 
-<div class="hero">
-	<div class="right-banner">
-
-		<div class="content">
-			<span class="content__subtitle">ACADEMICS</span>
-			<span class="content__title">OPENING UP A WORLD OF EDUCATION</span>
-			<span class="content__description">We believe that there is nothing more important than skillful education. Doing the right thing. at the right time</span>
-			<a href="#">Know More</a>
+<div class="wrapper">
+	<div class="hero">
+		<div class="right-banner">
+			<div class="content">
+				<span class="content__subtitle">Arlington High School</span>
+				<span class="content__title">OPENING UP A WORLD OF EDUCATION</span>
+				<span class="content__description"
+					>We believe that there is nothing more important than skillful education. Doing the right
+					thing. at the right time</span
+				>
+				<a href="#">Know More</a>
+			</div>
 		</div>
-
+		<img src={bg} alt="" srcset="" />
 	</div>
-	<img src={bg} alt="" srcset="">
-
+	<div class="services">
+		<div class="services__card">
+			<div class="services__logo">
+				<i class="fa-solid fa-school fa-2xl" />
+			</div>
+			<div class="services__header">
+				<span class="title">High School Life</span>
+				<span class="subtitle">Overall in here</span>
+			</div>
+		</div>
+		<div class="services__card">
+			<div class="services__logo" />
+			<div class="services__header">
+				<span class="title">Sports</span>
+				<span class="subtitle">Overall in here</span>
+			</div>
+		</div>
+		<div class="services__card">
+			<div class="services__logo" />
+			<div class="services__header">
+				<span class="title">Social</span>
+				<span class="subtitle">Overall in here</span>
+			</div>
+		</div>
+	</div>
 </div>
 
-
-
 <style>
+	.wrapper {
+		margin-left: 160px;
+	}
+	.services {
+		margin-top: 2rem;
+		background: grey !important;
+	}
 
-	 
-	 @media (width < 1000px ) 
-    {
-        span {
+	.services__header {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.services__card {
+		/* color: black */
+		height: 15rem;
+		background: white;
+		display: flex;
+		flex: 1;
+	}
+	span.title {
+		color: black;
+	}
+	@media (width < 1000px) {
+		span {
 			font-size: 0.8em !important;
 		}
 		.content__title {
-		font-weight: bold;
-		font-size: 3.5em !important;
-		line-height: 4.2rem;
+			font-weight: bold;
+			font-size: 3.5em !important;
+			line-height: 4.2rem;
+		}
+		.content__description {
+			font-weight: 400;
+			font-size: 0.8em !important;
+		}
 	}
-	.content__description {
-		font-weight: 400;
-		font-size: 0.8em !important;
-	}
-    }
-	
-	@media (width < 750px)
-	{
+
+	@media (width < 750px) {
 		.right-banner {
-		position: absolute !important;
-		height: 50% !important;
-		width: 80% !important;
-		top: 25% !important;
-		right: 12.5% !important;
+			position: absolute !important;
+			height: 50% !important;
+			width: 80% !important;
+			top: 25% !important;
+			right: 12.5% !important;
 		}
 		.content {
-		
 			align-items: center !important;
 			justify-content: center !important;
 			gap: 0.5rem !important;
 		}
 		.content__title {
-		font-weight: bold;
-		font-size: 1.5em !important;
-		line-height: 2.2rem !important;
-	}
-	.content__description {
-		font-weight: 400;
-		line-height: 1.4em !important;
-		font-size: 0.8em !important;
-	}
+			font-weight: bold;
+			font-size: 1.5em !important;
+			line-height: 2.2rem !important;
+		}
+		.content__description {
+			font-weight: 400;
+			line-height: 1.4em !important;
+			font-size: 0.8em !important;
+		}
 		.hero {
 			height: calc(100vh - 75px) !important;
 		}
@@ -82,7 +125,6 @@
 		padding-inline: 1.5rem;
 		padding-block: 0.5rem;
 		width: fit-content;
-
 	}
 	span {
 		color: white;
@@ -97,7 +139,7 @@
 	}
 	.content__subtitle {
 		font-weight: 200;
-		letter-spacing: 0.6rem;
+		letter-spacing: 0.3rem;
 	}
 	.content__title {
 		font-weight: bold;
@@ -112,7 +154,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		
 	}
 
 	.hero {
@@ -137,5 +178,11 @@
 		right: 0;
 		top: 0;
 	}
-
+	.services {
+		/* transform: translateY(-50px); */
+		display: flex;
+		width: 100%;
+		height: 20vh;
+		z-index: 9999;
+	}
 </style>
