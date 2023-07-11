@@ -31,7 +31,7 @@
 						ease: 'easeIn'
 					},
 					{
-						translateX: isDesktop ? '160px' : isMobile ? 0 : 0,
+						translateX: 0,
 						duration: '0.4',
 						ease: 'easeIn',
 						paused: true
@@ -117,7 +117,7 @@
 	}
 
 	nav {
-		background: #fff6f4;
+		background: white;
 		position: relative;
 		width: 100%;
 		height: 75px;

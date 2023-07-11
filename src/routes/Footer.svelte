@@ -36,22 +36,22 @@
 			</div>
 		</div>
 		<div class="academics">
-			<div class="academics__title">Staff</div>
+			<div class="academics__title">Socials</div>
 			<div class="academics__subtitle">
 				<a href="#1">Professors</a><a href="#2">Team</a><a href="#3">History</a>
 			</div>
 		</div>
-		<div class="academics">
+		<!-- <div class="academics">
 			<div class="academics__title">Staff</div>
 			<div class="academics__subtitle">
 				<a href="#1">Professors</a><a href="#2">Team</a><a href="#3">History</a>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div>
 <div class="footer__social">
 	<span class="copyright">
-		Copyright all rights reserved to <span class="agency">Relink Agency 2023.</span>
+		Copyright all rights reserved to <span class="agency">Arlington</span> 2023.
 	</span>
 	<div class="socials">
 		<a href="#facebook">

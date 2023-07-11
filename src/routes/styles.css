@@ -8,6 +8,8 @@
 	--special-color : #FFF6F4;
 	--darker-sec-color : #4955e0;
 	--extradarker-sec-color : #404dde;
+	--gap : clamp(0.3rem,0.5vh,1rem);
+	--font-size : clamp(0.5rem,0.4rem + .5vw,1rem);
 
 }
 

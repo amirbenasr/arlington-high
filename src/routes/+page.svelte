@@ -193,11 +193,13 @@
 					<div class="info__title">Apply for Admission</div>
 					<div class="info__subtitle">2023 Pre-enrollement are now open</div>
 					<div class="info__description">
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit ex minus sequi laborum
-						ipsum non animi labore culpa distinctio earum magni nihil illo voluptatibus minima,
-						harum optio, delectus natus molestiae! Fugiat, magni aliquam molestiae labore
-						exercitationem dicta soluta commodi cum iusto, nulla, voluptas maxime aspernatur quis
-						doloremque itaque porro error.
+						<p>
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit ex minus sequi laborum
+							ipsum non animi labore culpa distinctio earum magni nihil illo voluptatibus minima,
+							harum optio, delectus natus molestiae! Fugiat, magni aliquam molestiae labore
+							exercitationem dicta soluta commodi cum iusto, nulla, voluptas maxime aspernatur quis
+							doloremque itaque porro error.
+						</p>
 					</div>
 					<Button title="Apply now" link="#" style="normal" primary={true} />
 				</div>
@@ -263,7 +265,7 @@
 		display: flex;
 		flex-direction: column;
 		position: absolute;
-		gap: 1rem;
+		gap: var(--gap);
 		top: 0;
 		color: white;
 		padding: 2rem;
@@ -276,11 +278,14 @@
 		color: var(--primary-color);
 		font-weight: 400;
 		width: fit-content;
-		margin-top: 0.5rem;
+		margin-top: var(--gap);
 	}
 	.info__description {
-		margin-top: 1.5rem;
+		margin-top: var(--gap);
 		font-weight: 300;
+	}
+	.info__description p {
+		font-size: var(--font-size) !important;
 	}
 
 	.wrapper {
@@ -323,7 +328,7 @@
 		font-size: smaller;
 		color: white;
 	}
-	@media (width < 1500px) {
+	@media (width < 1200px) {
 		.img.student {
 			display: none !important;
 		}
@@ -361,11 +366,11 @@
 			width: fit-content;
 			margin-top: 0.2rem;
 		}
-		.info__description {
+		/* .info__description {
 			margin-top: 0.8rem;
 			font-weight: 300;
 			font-size: 0.8rem;
-		}
+		} */
 		.img.student {
 			display: none !important;
 			flex: unset;
