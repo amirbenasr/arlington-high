@@ -25,25 +25,25 @@
 			<div class="academics">
 				<div class="academics__title">Academics</div>
 				<div class="academics__subtitle">
-					<a href="#1">Programs</a><a href="#2">Courses</a><a href="#3">Professors</a>
+					<a href="/">Programs</a><a href="/">Courses</a><a href="/">Professors</a>
 				</div>
 			</div>
 			<div class="academics">
 				<div class="academics__title">Staff</div>
 				<div class="academics__subtitle">
-					<a href="#1">Professors</a><a href="#2">Team</a><a href="#3">History</a>
+					<a href="/">Professors</a><a href="/">Team</a><a href="/">History</a>
 				</div>
 			</div>
 			<div class="academics">
 				<div class="academics__title">Socials</div>
 				<div class="academics__subtitle">
-					<a href="#1">Facebook</a><a href="#2">Instagram</a><a href="#3">Twitter</a>
+					<a href="/">Facebook</a><a href="/">Instagram</a><a href="/">Twitter</a>
 				</div>
 			</div>
 			<!-- <div class="academics">
 				<div class="academics__title">Staff</div>
 				<div class="academics__subtitle">
-					<a href="#1">Professors</a><a href="#2">Team</a><a href="#3">History</a>
+					<a href="/">Professors</a><a href="/">Team</a><a href="/">History</a>
 				</div>
 			</div> -->
 		</div>

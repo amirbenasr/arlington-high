@@ -6,11 +6,12 @@
 	import gsap from 'gsap';
 	import { onMount } from 'svelte';
 
-	let mm = gsap.matchMedia();
 
 	let animate;
 	let menuOpen = false;
 	onMount(() => {
+	let mm = gsap.matchMedia();
+
 		let menuButtons = document.querySelectorAll('.menu__list a');
 		menuButtons.forEach((button) => {
 			button.addEventListener('click', function (e) {
@@ -56,10 +57,10 @@
 		<img src={Arlingtonlogo} alt="" srcset="" class="logo" />
 		<div class="links">
 			<ul class="nav">
-				<li><a href="Home">Home</a></li>
-				<li><a href="About Us">About us</a></li>
-				<li><a href="Contact">Application</a></li>
-				<li><a href="Contact">Contact</a></li>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About us</a></li>
+				<li><a href="/application">Application</a></li>
+				<li><a href="/contact">Contact</a></li>
 			</ul>
 		</div>
 	</nav>

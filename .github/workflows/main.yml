@@ -25,4 +25,4 @@ jobs:
           username: ${{ secrets.username }}
           password: ${{ secrets.password }}
           local-dir: ./build/
-          server-dir: /arlington-high.com/
+          server-dir: /dev.arlington-high.com/
