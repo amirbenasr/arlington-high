@@ -6,18 +6,18 @@
 	import gsap from 'gsap';
 	import { onMount } from 'svelte';
 
-
 	let animate;
 	let menuOpen = false;
-	onMount(() => {
-	let mm = gsap.matchMedia();
+	onMount(async () => {
+		let mm = gsap.matchMedia();
 
-		let menuButtons = document.querySelectorAll('.menu__list a');
+		let menuButtons = document.querySelectorAll('a');
 		menuButtons.forEach((button) => {
-			button.addEventListener('click', function (e) {
-				toggleMenu();
-			});
+			// button.addEventListener('click', function (e) {
+			// 	toggleMenu();
+			// });
 		});
+
 		mm.add(
 			{
 				isMobile: '(width < 750px)',
@@ -25,36 +25,42 @@
 			},
 			(ctx) => {
 				let { isMobile, isDesktop } = ctx.conditions;
-				animate = gsap.fromTo(
-					'.menu',
-					{
-						translateY: '-100%',
-						duration: '0.4',
-						ease: 'easeIn'
-					},
-					{
-						translateY: '0%',
-						duration: '0.4',
-						ease: 'easeIn',
-						paused: true
-					}
-				);
+				animate = gsap.fromTo('ul.nav_mobile',{
+					opacity:0,
+					display:'none',
+					translateY:"-100%",
+					duration:0.1
+				}, {
+					display:'flex',
+					justifyContent:'space-between',
+					opacity:1,
+					translateY:"0",
+					duration:0.1,
+					paused:true,
+
+				});
 			}
 		);
 	});
 	function toggleMenu() {
+		console.log('calling this');
 		menuOpen = !menuOpen;
-		if (menuOpen) {
+		if(menuOpen)
+		{	
 			animate.play();
-		} else {
+		}
+		else {
 			animate.reverse();
 		}
 	}
 </script>
-<div class="wrapper">
 
+<div class="wrapper">
 	<nav>
 		<img src={Arlingtonlogo} alt="" srcset="" class="logo" />
+		<a on:click={() => toggleMenu()}>
+			<i class="menu_button fa fa-bars fa-xl" />
+		</a>
 		<div class="links">
 			<ul class="nav">
 				<li><a href="/">Home</a></li>
@@ -64,66 +70,74 @@
 			</ul>
 		</div>
 	</nav>
+	<ul class="nav_mobile" >
+		<li><a href="/">Home</a></li>
+		<li><a href="/about">About us</a></li>
+		<li><a href="/application">Application</a></li>
+		<li><a href="/contact">Contact</a></li>
+	</ul>
 </div>
 
-
 <style>
+	ul.visible {
+		display: flex !important ;
+		align-items: center;
+		justify-content: space-around;
+	}
+	@media (width < 780px) {
+		.menu_button {
+			display: inline-block !important;
+		}
+		.links {
+			display: none !important;
+		}
+
+	}
+
 	
-	ul {
+	.menu_button {
+		display: none;
+	}
+	ul.nav_mobile {
 		list-style: none;
-		display: flex !important;
+		display: none  ;
 		font-size: 16px !important;
-	}
-	
-	li::after
-	{
-		content: '|';
-		padding-left: 1rem;
-		
+		padding: 0;
 	}
 
-
-
-
-	
-	
 	a {
-		
-		/* padding: 0.5rem; */
 		text-decoration: none;
 		color: var(--primary-color);
-		border: 0px solid var(--primary-color);
-		/* border-radius: 10%; */
+		display: inline-block;
+		transition: all 1s ease-in;
 	}
-	a:focus {
-		border-bottom: 1px solid var(--primary-color);
+	a::after {
+		display: block;
+		content: '';
+		border-bottom: solid 3px var(--primary-color);
+		transform: scaleX(0);
+		transition: transform 250ms ease-in-out;
+	}
+	a:hover::after {
+		transform: scaleX(1);
+	}
 
-	}
-	a:hover {
-		border-bottom: 1px solid var(--primary-color);
-		transition: all 1s;
-	}
-	
 	.logo {
 		max-width: 100%;
 		max-height: 100%;
 		/* scale: 5; */
 	}
 
-	ul {
+	ul.nav {
 		display: flex;
 		flex-direction: row;
 		gap: 2rem;
-		
 	}
 	li {
 		list-style: none;
 		font-weight: 600;
 		font-size: 1.2rem;
 	}
-
-
-	
 
 	nav {
 		background: white;
@@ -134,7 +148,7 @@
 		justify-content: space-around;
 		align-items: center;
 	}
-	
+
 	img {
 		width: 10rem;
 		max-width: 100%;

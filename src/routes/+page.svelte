@@ -222,7 +222,7 @@
 		font-weight: 300;
 	}
 	.darker {
-		background: var(--darker-sec-color) !important;
+		background: var(--primary-color) !important;
 	}
 	.extra-darker {
 		background: var(--extradarker-sec-color) !important;
