@@ -15,7 +15,7 @@
 	.app {
 	}
 	main {
-		border: 1px solid red;
-		width: 100vw !important;
+		/* border: 1px solid red; */
+		/* width: 100vw !important; */
 	}
 </style>

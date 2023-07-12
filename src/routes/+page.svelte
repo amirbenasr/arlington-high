@@ -3,7 +3,7 @@
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
 	import bg from '$lib/images/bg-school.jpg';
 	import student from '$lib/images/student.jpg';
-	import students from '$lib/images/students.jpg';
+	import students from '$lib/images/student_girl.jpg';
 	import ApplyBanner from './ApplyBanner.svelte';
 	import Footer from './Footer.svelte';
 	import Button from './Button.svelte';
@@ -75,7 +75,7 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head> -->
 
-<div class="wrapper">
+<div class="">
 	<ApplyBanner />
 	<div class="hero">
 		<div class="right-banner">
@@ -89,11 +89,11 @@
 				<Button id="btn" title="Know More" link="#" style="outlined" />
 			</div>
 		</div>
-		<img src={students} alt="" srcset="" />
+		<img class="student_girl" src={students} alt="" srcset="" />
 	</div>
 	<div class="wrapper_tr">
 		<div class="services">
-			<div class="services__card">
+			<div class="services__card darker">
 				<div class="services__header">
 					<div class="services__logo">
 						<i class="fa-solid fa-school fa-2xl" />
@@ -123,7 +123,7 @@
 				</div>
 			</div>
 
-			<div class="services__card darker">
+			<div class="services__card ">
 				<div class="services__header">
 					<div class="services__logo">
 						<i class="fa-solid fa-football fa-2xl" />
@@ -153,7 +153,7 @@
 				</div>
 			</div>
 
-			<div class="services__card extra-darker">
+			<div class="services__card darker">
 				<div class="services__header">
 					<div class="services__logo">
 						<i class="fa-solid fa-book-open fa-2xl" />
@@ -188,7 +188,6 @@
 				<img src={student} alt="" srcset="" />
 			</div>
 			<div class="info">
-				<img src={bg} alt="" srcset="" />
 				<div class="info__content">
 					<div class="info__title">Apply for Admission</div>
 					<div class="info__subtitle">2023 Pre-enrollement are now open</div>
@@ -201,7 +200,7 @@
 							doloremque itaque porro error.
 						</p>
 					</div>
-					<Button title="Apply now" link="#" style="normal" primary={true} />
+					<Button title="Apply now" link="#" style="cta"  />
 				</div>
 			</div>
 		</div>
@@ -210,6 +209,9 @@
 </div>
 
 <style>
+	.student_girl {
+	transform: scaleX(-1);
+	}
 	.services__description {
 		display: flex;
 		flex-direction: column;
@@ -252,19 +254,22 @@
 		margin: 0 auto;
 		display: flex;
 		flex-wrap: wrap-reverse;
-		margin-top: 1rem;
+		/* margin-top: 1rem; */
 	}
 	.img {
 		flex: 1;
+		max-height: 100%;
+
 	}
 	.info {
 		flex: 1;
 		position: relative;
+		background: var(--secondary-color);
 	}
 	.info__content {
 		display: flex;
 		flex-direction: column;
-		position: absolute;
+		position: relative;
 		gap: var(--gap);
 		top: 0;
 		color: white;
@@ -275,7 +280,7 @@
 		font-size: 2.5rem;
 	}
 	.info__subtitle {
-		color: var(--primary-color);
+		color: white !important;
 		font-weight: 400;
 		width: fit-content;
 		margin-top: var(--gap);
@@ -288,7 +293,9 @@
 		font-size: var(--font-size) !important;
 	}
 
-	.wrapper {
+	:global(.wrapper) {
+		width: 90%;
+		margin: 0 auto;
 	}
 	.services {
 		width: 80%;
@@ -328,6 +335,13 @@
 		font-size: smaller;
 		color: white;
 	}
+
+	@media (width < 1500px)
+	{
+		img.student_girl {
+			object-position: center !important ;
+		}
+	}
 	@media (width < 1200px) {
 		.img.student {
 			display: none !important;
@@ -352,6 +366,9 @@
 	}
 
 	@media (width < 750px) {
+		img.student_girl {
+			object-position: 70% !important ;
+		}
 		.info__content {
 			gap: 0.4rem !important;
 			padding: 1rem !important;
@@ -420,10 +437,11 @@
 		font-size: 1em;
 	}
 	.content {
+		text-align: center;
 		display: flex;
 		flex-direction: column;
-		max-width: auto;
-		margin: 12rem;
+		align-items: center;
+		margin-inline: 1rem;
 		gap: 1.5rem;
 	}
 	.content__subtitle {
@@ -454,9 +472,11 @@
 	img {
 		width: 100%;
 		height: 100%;
-		object-fit: fill;
+		object-fit: cover;
 	}
-
+	img.student_girl {
+		object-position: top left ;
+	}
 	.right-banner {
 		background: var(--primary-color);
 		opacity: 0.9;

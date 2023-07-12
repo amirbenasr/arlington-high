@@ -25,6 +25,9 @@
 {#if style == 'outlined'}
 	<a class:outlined={true} class:primary class:secondary={!primary} href={link}>{title}</a>
 {/if}
+{#if style == 'cta'}
+	<a class:outlined={true} class:cta={ style==="cta" ? true : false} href={link} >{title}</a>
+{/if}
 {#if style == 'borderless'}
 	<a bind:this={btn} class:borderless={true} href={link}
 		>{title}
@@ -33,6 +36,12 @@
 {/if}
 
 <style>
+	@media (width < 750px)
+	{
+		a {
+			padding: 0.2rem !important;
+		}
+	}
 	a {
 		text-decoration: none;
 		padding: 0.5rem;
@@ -71,5 +80,9 @@
 	}
 	a.secondary {
 		background: var(--secondary-color) !important;
+	}
+	a.cta {
+		background: white;
+		color: var(--secondary-color);
 	}
 </style>

@@ -1,7 +1,8 @@
 <script>
 	import svgLogo from '$lib/images/github.svg';
 	import logo from '$lib/images/logo.png';
-	import Arlingtonlogo from '$lib/images/arlington-logo.svg';
+	// import Arlingtonlogo from '$lib/images/arlington-logo.svg';
+	import Arlingtonlogo from '$lib/images/logo_ar.png';
 	import gsap from 'gsap';
 	import { onMount } from 'svelte';
 
@@ -26,12 +27,12 @@
 				animate = gsap.fromTo(
 					'.menu',
 					{
-						translateX: '-100%',
+						translateY: '-100%',
 						duration: '0.4',
 						ease: 'easeIn'
 					},
 					{
-						translateX: 0,
+						translateY: '0%',
 						duration: '0.4',
 						ease: 'easeIn',
 						paused: true
@@ -49,91 +50,92 @@
 		}
 	}
 </script>
+<div class="wrapper">
 
-<nav>
-	<img src={Arlingtonlogo} alt="" srcset="" class="logo" />
-	<i class="fa-solid fa-magnifying-glass fa-xl" />
-	<a href="#" on:click={() => toggleMenu()}>
-		<i class="fa-solid fa-bars fa-xl" />
-	</a>
-</nav>
-<div class="menu">
-	<div class="menu__sidebar">
-		<ul class="menu__list">
-			<li>
-				<a href="/">Home</a>
-			</li>
-			<li><a href="/about">About</a></li>
-			<li><a href="contact">Contact</a></li>
-		</ul>
-	</div>
-	<div class="menu__content">
-		<h1>Hello world</h1>
-		<p>Some content about the selected page</p>
-	</div>
+	<nav>
+		<img src={Arlingtonlogo} alt="" srcset="" class="logo" />
+		<div class="links">
+			<ul class="nav">
+				<li><a href="Home">Home</a></li>
+				<li><a href="About Us">About us</a></li>
+				<li><a href="Contact">Application</a></li>
+				<li><a href="Contact">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
 </div>
 
+
 <style>
-	a {
-		color: black;
+	
+	ul {
+		list-style: none;
+		display: flex !important;
+		font-size: 16px !important;
 	}
+	
+	li::after
+	{
+		content: '|';
+		padding-left: 1rem;
+		
+	}
+
+
+
+
+	
+	
+	a {
+		
+		/* padding: 0.5rem; */
+		text-decoration: none;
+		color: var(--primary-color);
+		border: 0px solid var(--primary-color);
+		/* border-radius: 10%; */
+	}
+	a:focus {
+		border-bottom: 1px solid var(--primary-color);
+
+	}
+	a:hover {
+		border-bottom: 1px solid var(--primary-color);
+		transition: all 1s;
+	}
+	
 	.logo {
-		scale: 5;
+		max-width: 100%;
+		max-height: 100%;
+		/* scale: 5; */
 	}
 
 	ul {
 		display: flex;
-		flex-direction: column;
-		gap: 3rem;
+		flex-direction: row;
+		gap: 2rem;
+		
 	}
 	li {
 		list-style: none;
-		font-weight: 700;
-		font-size: 3rem;
-	}
-	.menu {
-		height: 100vh;
-		background: white;
-		position: fixed;
-		top: 0;
-		left: 0;
-		transform: translateX(-100%);
-		width: 100%;
-		height: 100%;
-		display: flex;
-		align-items: stretch;
-		justify-content: center;
-		z-index: 69;
+		font-weight: 600;
+		font-size: 1.2rem;
 	}
 
-	.menu__sidebar {
-		flex: 1;
-		place-self: center;
-	}
 
-	.menu__content {
-		flex: 1;
-		place-self: center;
-	}
+	
 
 	nav {
 		background: white;
 		position: relative;
 		width: 100%;
 		height: 75px;
-		left: 0;
-		top: 0;
-		z-index: 999;
 		display: flex;
-		/* flex-direction: ro; */
 		justify-content: space-around;
 		align-items: center;
 	}
-	.logo {
-		max-width: 1rem;
-	}
+	
 	img {
-		width: 3rem;
+		width: 10rem;
 		max-width: 100%;
 		max-height: 100%;
 	}

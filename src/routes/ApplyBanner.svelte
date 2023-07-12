@@ -1,10 +1,23 @@
 <script >
+	import { onMount } from "svelte";
 	import Button from "./Button.svelte";
+    import { gsap } from "gsap";
 
+  
     let banner ;
     function dismiss() {
         banner.remove();
     }
+    onMount( async ()=> {
+        gsap.fromTo('.banner',{
+            opacity:'0'
+
+        },{
+            opacity:'1',
+            duration:2
+            
+        },)
+    })
 </script>
 <div class="banner" bind:this={banner}>
     <a class="dismiss" href="http://" on:click={dismiss}>
@@ -36,13 +49,16 @@
         color: white;
     }
     	.banner {
-            position: relative;
+        position: relative;
 		width: 100%;
 		background: var(--secondary-color);
 		display: flex;
 		justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 1rem;
         align-items: center;
-		padding: 0.5rem;
+		padding-block: 0.5rem;
+
 	}
     .banner__details {
 
