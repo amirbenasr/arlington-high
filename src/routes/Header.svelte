@@ -1,7 +1,4 @@
 <script>
-	import svgLogo from '$lib/images/github.svg';
-	import logo from '$lib/images/logo.png';
-	// import Arlingtonlogo from '$lib/images/arlington-logo.svg';
 	import Arlingtonlogo from '$lib/images/logo_ar.png';
 	import gsap from 'gsap';
 	import { onMount } from 'svelte';
