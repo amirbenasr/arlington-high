@@ -9,18 +9,13 @@
 	<main>
 		<slot />
 	</main>
-
-	
 </div>
 
 <style>
-
-
-	
-
-	
-
-	
-
-	
+	.app {
+	}
+	main {
+		/* border: 1px solid red; */
+		/* width: 100vw !important; */
+	}
 </style>
