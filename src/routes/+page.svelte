@@ -1,9 +1,11 @@
 <script>
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
-	import bg from '$lib/images/bg-school.jpg';
+	import Card from './Card.svelte';
+
 	import student from '$lib/images/student.jpg';
 	import students from '$lib/images/student_girl.jpg';
+	import academics from '$lib/images/academics.jpg';
+	import sports from '$lib/images/sports.jpg';
+	import professors from '$lib/images/professors.png';
 	import ApplyBanner from './ApplyBanner.svelte';
 	import Footer from './Footer.svelte';
 	import Button from './Button.svelte';
@@ -11,6 +13,35 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
 
+	const cards = [
+		{
+			icon: 'fa-school',
+			title: 'High School Life',
+			subtitle: 'Embracing Growth.',
+			content: `
+			At Arlington High School, we are committed to providing a rich and diverse educational
+			experience that fosters personal growth, builds meaningful relationships, and prepares
+			students for their future endeavors.`,
+			image: academics
+		},
+		{
+			icon: 'fa-football',
+			title: 'Sports',
+			subtitle: 'Igniting Passion.',
+			content: `Our sports program enhances the high school experience and cultivates invaluable life
+						lessons. Join us at Arlington High School, where we empower students to unlock their
+						potential both academically and athletically.`,
+			image: sports
+		},
+		{
+			icon: 'fa-book-open',
+			title: 'Academics',
+			subtitle: 'Fostering Knowledge.',
+			content: `Our dedicated and passionate faculty members are committed to fostering critical
+						thinking, creativity, and a love for learning in every student.`,
+			image: professors
+		}
+	];
 	onMount(() => {
 		// register plugin
 		gsap.registerPlugin(ScrollTrigger);
@@ -86,102 +117,17 @@
 					>We believe that there is nothing more important than skillful education. Doing the right
 					thing. at the right time</span
 				>
-				<Button id="btn" title="Know More" link="#" style="outlined" />
+
+				<Button title="Apply Now" link="#" style="outlined" />
 			</div>
 		</div>
 		<img class="student_girl" src={students} alt="" srcset="" />
 	</div>
 	<div class="wrapper_tr">
 		<div class="services">
-			<div class="services__card darker">
-				<div class="services__header">
-					<div class="services__logo">
-						<i class="fa-solid fa-school fa-2xl" />
-					</div>
-					<div class="services__text">
-						<span class="title">High School Life</span>
-						<span class="subtitle">Lorem ipsum dolor sit amet.</span>
-					</div>
-				</div>
-				<div class="img">
-					<img
-						class="service"
-						src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-						alt=""
-						srcset=""
-					/>
-				</div>
-				<div class="services__description">
-					<span
-						>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae adipisci aut corrupti
-						accusamus eligendi vel pariatur tenetur optio consectetur tempora, ea, non aspernatur
-						voluptatum praesentium eos ratione repellat dolores accusantium blanditiis fugit?
-						Quaerat sed soluta aut nostrum nulla inventore, cupiditate voluptas quasi necessitatibus
-						quae temporibus ex vel minima magni? Nobis.</span
-					>
-					<Button title="Learn More" link="#" style="borderless" />
-				</div>
-			</div>
-
-			<div class="services__card ">
-				<div class="services__header">
-					<div class="services__logo">
-						<i class="fa-solid fa-football fa-2xl" />
-					</div>
-					<div class="services__text">
-						<span class="title">Sports</span>
-						<span class="subtitle">Lorem ipsum dolor sit amet.</span>
-					</div>
-				</div>
-				<div class="img">
-					<img
-						class="service"
-						src="https://images.unsplash.com/photo-1603351819757-84fc2cfb9b0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80"
-						alt=""
-						srcset=""
-					/>
-				</div>
-				<div class="services__description">
-					<span
-						>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae adipisci aut corrupti
-						accusamus eligendi vel pariatur tenetur optio consectetur tempora, ea, non aspernatur
-						voluptatum praesentium eos ratione repellat dolores accusantium blanditiis fugit?
-						Quaerat sed soluta aut nostrum nulla inventore, cupiditate voluptas quasi necessitatibus
-						quae temporibus ex vel minima magni? Nobis.</span
-					>
-					<Button title="Learn More" link="#" style="borderless" />
-				</div>
-			</div>
-
-			<div class="services__card darker">
-				<div class="services__header">
-					<div class="services__logo">
-						<i class="fa-solid fa-book-open fa-2xl" />
-					</div>
-					<div class="services__text">
-						<span class="title">Academics</span>
-						<span class="subtitle">Lorem ipsum dolor sit amet.</span>
-					</div>
-				</div>
-				<div class="img">
-					<img
-						class="service"
-						src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-						alt=""
-						srcset=""
-					/>
-				</div>
-				<div class="services__description">
-					<span
-						>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae adipisci aut corrupti
-						accusamus eligendi vel pariatur tenetur optio consectetur tempora, ea, non aspernatur
-						voluptatum praesentium eos ratione repellat dolores accusantium blanditiis fugit?
-						Quaerat sed soluta aut nostrum nulla inventore, cupiditate voluptas quasi necessitatibus
-						quae temporibus ex vel minima magni? Nobis.</span
-					>
-					<Button title="Learn More" link="#" style="borderless" />
-				</div>
-			</div>
+			<Card {...cards[0]} variant="true" />
+			<Card {...cards[1]} />
+			<Card {...cards[2]} variant="true" />
 		</div>
 		<div class="admission">
 			<div class="img student">
@@ -193,14 +139,13 @@
 					<div class="info__subtitle">2023 Pre-enrollement are now open</div>
 					<div class="info__description">
 						<p>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit ex minus sequi laborum
-							ipsum non animi labore culpa distinctio earum magni nihil illo voluptatibus minima,
-							harum optio, delectus natus molestiae! Fugiat, magni aliquam molestiae labore
-							exercitationem dicta soluta commodi cum iusto, nulla, voluptas maxime aspernatur quis
-							doloremque itaque porro error.
+							Are you ready to embark on an extraordinary educational journey? Take the first step
+							by clicking the "Apply Now" button below to submit your application to Arlington High
+							School. Join our vibrant community and embrace the countless opportunities that await
+							you.
 						</p>
 					</div>
-					<Button title="Apply now" link="#" style="cta"  />
+					<Button title="Apply now" link="#" style="cta" />
 				</div>
 			</div>
 		</div>
@@ -209,11 +154,15 @@
 </div>
 
 <style>
+	.btn {
+		position: absolute !important;
+	}
 	.student_girl {
-	transform: scaleX(-1);
+		transform: scaleX(-1);
 	}
 	.services__description {
 		display: flex;
+		height: 10rem;
 		flex-direction: column;
 		gap: 0.5rem;
 		padding: 0.5rem;
@@ -259,7 +208,6 @@
 	.img {
 		flex: 1;
 		max-height: 100%;
-
 	}
 	.info {
 		flex: 1;
@@ -301,8 +249,9 @@
 		width: 80%;
 		margin: 0 auto;
 		border-radius: 2px;
-		/* padding: 2rem; */
+		padding: 2rem;
 		display: flex;
+		gap: 1rem;
 		flex-wrap: wrap-reverse;
 		align-items: center;
 	}
@@ -319,7 +268,8 @@
 	}
 
 	.services__card {
-		flex: 1 1 200px;
+		flex: 1 0 300px;
+		max-height: auto;
 		color: white;
 		background: var(--secondary-color);
 		display: flex;
@@ -336,8 +286,7 @@
 		color: white;
 	}
 
-	@media (width < 1500px)
-	{
+	@media (width < 1500px) {
 		img.student_girl {
 			object-position: center !important ;
 		}
@@ -475,7 +424,7 @@
 		object-fit: cover;
 	}
 	img.student_girl {
-		object-position: top left ;
+		object-position: top left;
 	}
 	.right-banner {
 		background: var(--primary-color);

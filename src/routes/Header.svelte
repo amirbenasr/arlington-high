@@ -25,31 +25,32 @@
 			},
 			(ctx) => {
 				let { isMobile, isDesktop } = ctx.conditions;
-				animate = gsap.fromTo('ul.nav_mobile',{
-					opacity:0,
-					display:'none',
-					translateY:"-100%",
-					duration:0.1
-				}, {
-					display:'flex',
-					justifyContent:'space-between',
-					opacity:1,
-					translateY:"0",
-					duration:0.1,
-					paused:true,
-
-				});
+				animate = gsap.fromTo(
+					'ul.nav_mobile',
+					{
+						opacity: 0,
+						display: 'none',
+						translateY: '-100%',
+						duration: 0.1
+					},
+					{
+						display: 'flex',
+						justifyContent: 'space-between',
+						opacity: 1,
+						translateY: '0',
+						duration: 0.1,
+						paused: true
+					}
+				);
 			}
 		);
 	});
 	function toggleMenu() {
 		console.log('calling this');
 		menuOpen = !menuOpen;
-		if(menuOpen)
-		{	
+		if (menuOpen) {
 			animate.play();
-		}
-		else {
+		} else {
 			animate.reverse();
 		}
 	}
@@ -65,17 +66,17 @@
 			<ul class="nav">
 				<li><a href="/">Home</a></li>
 				<li><a href="/about">About us</a></li>
-				<li><a href="/application">Application</a></li>
+				<li><a href="/admissions">Admissions</a></li>
 				<li><a href="/contact">Contact</a></li>
 			</ul>
 		</div>
 	</nav>
-	<ul class="nav_mobile" >
+	<!-- <ul class="nav_mobile" >
 		<li><a href="/">Home</a></li>
 		<li><a href="/about">About us</a></li>
 		<li><a href="/application">Application</a></li>
 		<li><a href="/contact">Contact</a></li>
-	</ul>
+	</ul> -->
 </div>
 
 <style>
@@ -91,16 +92,14 @@
 		.links {
 			display: none !important;
 		}
-
 	}
 
-	
 	.menu_button {
 		display: none;
 	}
 	ul.nav_mobile {
 		list-style: none;
-		display: none  ;
+		display: none;
 		font-size: 16px !important;
 		padding: 0;
 	}

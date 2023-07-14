@@ -14,8 +14,10 @@
 			duration: 1,
 			paused: true
 		});
-		btn.addEventListener('mouseenter', () => animation.play());
-		btn.addEventListener('mouseleave', () => animation.reverse());
+		if (btn) {
+			btn.addEventListener('mouseenter', () => animation.play());
+			btn.addEventListener('mouseleave', () => animation.reverse());
+		}
 	});
 </script>
 
@@ -26,7 +28,7 @@
 	<a class:outlined={true} class:primary class:secondary={!primary} href={link}>{title}</a>
 {/if}
 {#if style == 'cta'}
-	<a class:outlined={true} class:cta={ style==="cta" ? true : false} href={link} >{title}</a>
+	<a class:outlined={true} class:cta={style === 'cta' ? true : false} href={link}>{title}</a>
 {/if}
 {#if style == 'borderless'}
 	<a bind:this={btn} class:borderless={true} href={link}
@@ -36,21 +38,24 @@
 {/if}
 
 <style>
-	@media (width < 750px)
-	{
+	@media (width < 750px) {
 		a {
-			padding: 0.2rem !important;
+			margin: 0.2rem !important;
 		}
 	}
 	a {
 		text-decoration: none;
-		padding: 0.5rem;
+		display: block;
+		padding: 0.3rem;
+		box-sizing: border-box;
+		margin-bottom: 1rem;
 	}
 	a.button {
 		color: white;
 		background: var(--secondary-color);
 		border: 2px solid white;
 		width: fit-content;
+		box-sizing: border-box;
 	}
 	a.borderless {
 		border: transparent;
@@ -77,6 +82,7 @@
 
 	a.primary {
 		background: var(--primary-color) !important;
+		box-sizing: border-box;
 	}
 	a.secondary {
 		background: var(--secondary-color) !important;

@@ -1,27 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-	--primary-color : hsl(225, 47%, 25%);
-	--secondary-color : hsl(350, 79%, 42%);
-	--accent-color : #FFA41B;
-	--darker-color : #181c43;
-	--special-color : #FFF6F4;
-	--darker-sec-color : #4955e0;
-	--extradarker-sec-color : #404dde;
-	--gap : clamp(0.3rem,0.5vh,1rem);
-	--font-size : clamp(0.5rem,0.4rem + .5vw,1rem);
-
+	--primary-color: hsl(225, 47%, 25%);
+	--lighter-color: hsl(225, 47%, 30%);
+	--secondary-color: hsl(350, 79%, 42%);
+	--accent-color: #ffa41b;
+	--darker-color: #181c43;
+	--special-color: #fff6f4;
+	--darker-sec-color: #4955e0;
+	--extradarker-sec-color: #404dde;
+	--gap: clamp(0.3rem, 0.5vh, 1rem);
+	--font-size: clamp(0.5rem, 0.4rem + 0.5vw, 1rem);
 }
 
-body,html {
+body,
+html {
 	font-family: 'Poppins', sans-serif;
 	margin: 0px;
 	padding: 0px;
-	width: 100% ;
+	width: 100%;
 	overflow: auto;
-	
+	box-sizing: border-box;
 }
-
 
 img {
 	max-width: 100%;

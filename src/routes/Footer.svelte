@@ -3,17 +3,15 @@
 </script>
 
 <div class="full">
-
 	<div class="footer">
-		
 		<div class="hs__details">
 			<div class="hs__logo">
-					<img src={logo} alt="" />
+				<img src={logo} alt="" />
 			</div>
 			<div class="hs__address">
 				<span class="address">
 					1033 Lac Tunis <br />
-					Avenue de la bourse 
+					Avenue de la bourse
 				</span>
 			</div>
 			<div class="hs__contact">
@@ -23,9 +21,11 @@
 		</div>
 		<div class="hs__map">
 			<div class="academics">
-				<div class="academics__title">Academics</div>
+				<div class="academics__title">Site map</div>
 				<div class="academics__subtitle">
-					<a href="/">Programs</a><a href="/">Courses</a><a href="/">Professors</a>
+					<a href="/about">About us</a><a href="/admissions">Admissions</a><a href="/contact"
+						>Contact</a
+					>
 				</div>
 			</div>
 			<div class="academics">
@@ -40,6 +40,7 @@
 					<a href="/">Facebook</a><a href="/">Instagram</a><a href="/">Twitter</a>
 				</div>
 			</div>
+
 			<!-- <div class="academics">
 				<div class="academics__title">Staff</div>
 				<div class="academics__subtitle">
@@ -67,10 +68,9 @@
 </div>
 
 <style>
-
 	.hs__address {
 		border-top: 0.5px solid white;
-		padding-block:0.5rem ;
+		padding-block: 0.5rem;
 	}
 	span {
 		color: white;
@@ -111,7 +111,6 @@
 		border-bottom: 1px solid white;
 	}
 
-	
 	.hs__contact {
 		display: flex;
 		flex-direction: column;
@@ -127,9 +126,7 @@
 		display: inline-flex;
 		vertical-align: middle;
 		align-items: center;
-
 	}
-	
 
 	.hs__details {
 		color: white;
@@ -138,17 +135,14 @@
 		justify-content: start;
 		/* gap: 1rem; */
 		padding: 1rem;
-
 	}
 	img {
 		max-width: 100%;
 		max-height: 100%;
-		
 	}
-	.hs__logo  {
+	.hs__logo {
 		margin-bottom: 0.5rem;
 		max-width: 10rem;
-	
 	}
 
 	.hs__map {
