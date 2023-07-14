@@ -1,7 +1,45 @@
 <script>
+	import { onMount } from 'svelte';
 	import Pagelayout from '../Pagelayout.svelte';
+	import { enhance, applyAction } from '$app/forms';
+	import { get } from 'svelte/store';
+
+	export let data;
+	let proceed = true;
+	export let form;
+	let formGuide = {
+		fname: {
+			msg: ''
+		},
+		phone: {
+			msg: ''
+		},
+		email: {
+			msg: ''
+		},
+		subject: {
+			msg: ''
+		}
+	};
+
+	function checkFormData(formData) {
+		let sets = formData;
+		let proceed = true;
+		for (let [key, value] of sets) {
+			if (value == '') {
+				formGuide[key].msg = key + 'should not be empty';
+				proceed = false;
+			} else {
+				formGuide[key].msg = '';
+			}
+		}
+		return proceed;
+	}
 </script>
 
+{#if form?.success}
+	{form?.success}
+{/if}
 <Pagelayout title="Contact">
 	<h2>Contact Us</h2>
 	<p>
@@ -14,18 +52,49 @@
 	<h2>Admissions Office:</h2>
 	<p>Phone: +216 ()</p>
 	<p>Email: admission@arlington-high.com</p> -->
-	<div class="contact container">
+
+	<div class="contact container" class:error={!proceed}>
 		<div class="form">
-			<form action="action_page.php">
+			<form
+				action="?/contact"
+				method="POST"
+				use:enhance={({ formElement, formData, action, cancel, submitter }) => {
+					// `formElement` is this `<form>` element
+					// `formData` is its `FormData` object that's about to be submitted
+					// `action` is the URL to which the form is posted
+					// calling `cancel()` will prevent the submission
+					// `submitter` is the `HTMLElement` that caused the form to be submitted
+					// const fname = formData.get('fname');
+					// const phone = formData.get('phone');
+					// const email = formData.get('email');
+					// const subject = formData.get('subject');
+					// console.log(...formData.entries());
+
+					proceed = checkFormData(formData);
+
+					return async ({ result, update }) => {
+						if (proceed) {
+							update();
+						}
+					};
+				}}
+			>
 				<label for="fname">Full Name</label>
-				<input type="text" id="fname" name="firstname" placeholder="Your name.." />
+				<input type="text" id="fname" name="fname" placeholder="Your name.." />
+				{#if formGuide.fname.msg}
+					<small>{formGuide.fname.msg}</small>
+				{/if}
 
 				<label for="phone">Phone Number</label>
-				<input type="text" id="phone" name="phone" placeholder="Your phone number.." />
-
+				<input type="number" id="phone" name="phone" placeholder="Your phone number.." />
+				{#if formGuide.phone.msg}
+					<small>{formGuide.phone.msg}</small>
+				{/if}
 				<label for="email">Email</label>
-				<input type="text" id="email" name="email" placeholder="Your Email .." />
-
+				<input type="email" id="email" name="email" placeholder="Your Email .." />
+				{#if formGuide.email.msg}
+					<small>{formGuide.email.msg}</small>
+				{/if}
 				<!-- <label for="country">Country</label>
 				<select id="country" name="country">
 					<option value="australia">Australia</option>
@@ -40,8 +109,10 @@
 					placeholder="Write something.."
 					style="height:200px"
 				/>
-
-				<input type="submit" value="Submit" />
+				{#if formGuide.subject.msg}
+					<small>{formGuide.subject.msg}</small>
+				{/if}
+				<input formaction="?/contact" type="submit" value="Submit" />
 			</form>
 		</div>
 		<div class="map">
@@ -66,6 +137,9 @@
 </Pagelayout>
 
 <style>
+	.error {
+		border: 3px solid var(--secondary-color) !important;
+	}
 	.details {
 		padding: 1rem;
 	}
@@ -82,6 +156,9 @@
 	}
 	.form {
 		flex: 1;
+	}
+	.form > * > * {
+		display: block;
 	}
 	/* Style inputs with type="text", select elements and textareas */
 	input[type='text'],
