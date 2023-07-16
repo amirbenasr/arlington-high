@@ -1,5 +1,9 @@
 <script>
-	import Pagelayout from '../Pagelayout.svelte';
+	import Pagelayout from '$lib/components/Pagelayout.svelte';
+	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
+
+	onMount(() => {});
 </script>
 
 <Pagelayout title="About Us">

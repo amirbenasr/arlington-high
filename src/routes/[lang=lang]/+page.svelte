@@ -1,17 +1,17 @@
 <script>
-	import Card from './Card.svelte';
+	import Card from '$lib/components/Card.svelte';
 
 	import student from '$lib/images/student.jpg';
 	import students from '$lib/images/student_girl.jpg';
 	import academics from '$lib/images/academics.jpg';
 	import sports from '$lib/images/sports.jpg';
 	import professors from '$lib/images/professors.png';
-	import ApplyBanner from './ApplyBanner.svelte';
-	import Footer from './Footer.svelte';
-	import Button from './Button.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	import Button from '$lib/components/Button.svelte';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
+	import LL, { setLocale } from '$i18n/i18n-svelte';
 
 	const cards = [
 		{
@@ -42,6 +42,7 @@
 			image: professors
 		}
 	];
+
 	onMount(() => {
 		// register plugin
 		gsap.registerPlugin(ScrollTrigger);
@@ -101,18 +102,12 @@
 	});
 </script>
 
-<!-- <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head> -->
-
 <div class="">
-	<ApplyBanner />
 	<div class="hero">
 		<div class="right-banner">
 			<div class="content">
 				<span class="content__subtitle">Arlington High School | Tunisia</span>
-				<span class="content__title">OPENING UP A WORLD OF EDUCATION</span>
+				<span class="content__title">Elevate Your High School Experience</span>
 				<span class="content__description"
 					>We believe that there is nothing more important than skillful education. Doing the right
 					thing. at the right time</span
@@ -125,9 +120,9 @@
 	</div>
 	<div class="wrapper_tr">
 		<div class="services">
-			<Card {...cards[0]} variant="true" />
+			<Card {...cards[0]} variant={true} />
 			<Card {...cards[1]} />
-			<Card {...cards[2]} variant="true" />
+			<Card {...cards[2]} variant={true} />
 		</div>
 		<div class="admission">
 			<div class="img student">
@@ -192,12 +187,7 @@
 		width: 100%;
 		/* margin: 0 auto; */
 	}
-	a.apply {
-		background: var(--primary-color);
-	}
-	.info img {
-		filter: brightness(60%);
-	}
+
 	.admission {
 		width: 80%;
 		margin: 0 auto;
@@ -413,7 +403,7 @@
 	}
 
 	.hero {
-		height: 100vh;
+		height: calc(100vh - 94px) !important;
 		width: 100%;
 		position: relative;
 	}

@@ -1,14 +1,17 @@
 <script>
 	import { onMount } from 'svelte';
-	import Pagelayout from '../Pagelayout.svelte';
+	import Pagelayout from '$lib/components/Pagelayout.svelte';
 	import { enhance, applyAction } from '$app/forms';
 	import { get } from 'svelte/store';
 
 	export let data;
+
+	let sendingEmail = false;
+
 	let proceed = true;
 	export let form;
 	let formGuide = {
-		fname: {
+		fullname: {
 			msg: ''
 		},
 		phone: {
@@ -27,8 +30,11 @@
 		let proceed = true;
 		for (let [key, value] of sets) {
 			if (value == '') {
-				formGuide[key].msg = key + 'should not be empty';
 				proceed = false;
+				formGuide[key].msg = key + ' should not be empty';
+				let element = document.querySelector('#' + key);
+				element.focus();
+				return proceed;
 			} else {
 				formGuide[key].msg = '';
 			}
@@ -37,21 +43,12 @@
 	}
 </script>
 
-{#if form?.success}
-	{form?.success}
-{/if}
 <Pagelayout title="Contact">
 	<h2>Contact Us</h2>
 	<p>
 		We're here to assist you with any inquiries or concerns you may have. Please feel free to reach
 		out to our team using the contact information provided below:
 	</p>
-	<!-- <h2>General Inquiries:</h2>
-	<p>Phone: +216 ()</p>
-	<p>Email: contact@arlington-high.com</p>
-	<h2>Admissions Office:</h2>
-	<p>Phone: +216 ()</p>
-	<p>Email: admission@arlington-high.com</p> -->
 
 	<div class="contact container" class:error={!proceed}>
 		<div class="form">
@@ -59,32 +56,22 @@
 				action="?/contact"
 				method="POST"
 				use:enhance={({ formElement, formData, action, cancel, submitter }) => {
-					// `formElement` is this `<form>` element
-					// `formData` is its `FormData` object that's about to be submitted
-					// `action` is the URL to which the form is posted
-					// calling `cancel()` will prevent the submission
-					// `submitter` is the `HTMLElement` that caused the form to be submitted
-					// const fname = formData.get('fname');
-					// const phone = formData.get('phone');
-					// const email = formData.get('email');
-					// const subject = formData.get('subject');
-					// console.log(...formData.entries());
-
 					proceed = checkFormData(formData);
 
 					return async ({ result, update }) => {
 						if (proceed) {
+							sendingEmail = true;
 							update();
 						}
 					};
 				}}
 			>
 				<label for="fname">Full Name</label>
-				<input type="text" id="fname" name="fname" placeholder="Your name.." />
-				{#if formGuide.fname.msg}
-					<small>{formGuide.fname.msg}</small>
-				{/if}
 
+				<input type="text" id="fullname" name="fullname" placeholder="Your name.." />
+				{#if formGuide.fullname.msg}
+					<small>{formGuide.fullname.msg}</small>
+				{/if}
 				<label for="phone">Phone Number</label>
 				<input type="number" id="phone" name="phone" placeholder="Your phone number.." />
 				{#if formGuide.phone.msg}
@@ -112,10 +99,20 @@
 				{#if formGuide.subject.msg}
 					<small>{formGuide.subject.msg}</small>
 				{/if}
-				<input formaction="?/contact" type="submit" value="Submit" />
+				{#if !sendingEmail}
+					<input formaction="?/contact" type="submit" value="Submit" />
+				{:else}
+					<!-- <button class="buttonload"> -->
+					<button class="buttonload">
+						<i class="fa-solid fa-circle-notch fa-spin" /> Sending..
+					</button>
+
+					<!-- </button> -->
+				{/if}
 			</form>
 		</div>
 		<div class="map">
+			<!-- svelte-ignore a11y-missing-attribute -->
 			<iframe
 				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199.5469162275443!2d10.270580913060638!3d36.84844720010851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd4aad8fca749d%3A0xdfe4af39cf1c14b9!2sR7XC%2B969%2C%20Tunis!5e0!3m2!1sen!2stn!4v1689348891536!5m2!1sen!2stn"
 				width="400"
@@ -137,6 +134,22 @@
 </Pagelayout>
 
 <style>
+	.buttonload {
+		background-color: #04aa6d;
+		color: white;
+		padding: 12px 20px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+	:global(.success) {
+		background: green !important;
+	}
+	input[type='number']::-webkit-inner-spin-button,
+	input[type='number']::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
 	.error {
 		border: 3px solid var(--secondary-color) !important;
 	}
@@ -162,6 +175,8 @@
 	}
 	/* Style inputs with type="text", select elements and textareas */
 	input[type='text'],
+	input[type='number'],
+	input[type='email'],
 	select,
 	textarea {
 		width: 100%; /* Full width */
@@ -173,7 +188,11 @@
 		margin-bottom: 16px; /* Bottom margin */
 		resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
 	}
-
+	small {
+		margin-bottom: 16px;
+		transform: translateY(-8px);
+		color: var(--error-color);
+	}
 	/* Style the submit button with a specific background color etc */
 	input[type='submit'] {
 		background-color: var(--primary-color);

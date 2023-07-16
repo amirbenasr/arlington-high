@@ -48,7 +48,6 @@
 		display: block;
 		padding: 0.3rem;
 		box-sizing: border-box;
-		margin-bottom: 1rem;
 	}
 	a.button {
 		color: white;

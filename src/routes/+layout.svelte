@@ -1,6 +1,18 @@
 <script>
-	import Header from './Header.svelte';
+	import { browser } from '$app/environment';
+	import LL, { locale, setLocale } from '$i18n/i18n-svelte';
+	import Header from '$lib/components/Header.svelte';
 	import './styles.css';
+
+	locale.subscribe((e) => {
+		if (browser) {
+			if (e == 'ar') {
+				document.body.classList.add('rtl');
+			} else {
+				document.body.classList.remove('rtl');
+			}
+		}
+	});
 </script>
 
 <div class="app">

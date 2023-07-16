@@ -19,36 +19,36 @@
 				<a href="tel:+21654041337">+216 54041337</a>
 			</div>
 		</div>
-		<div class="hs__map">
-			<div class="academics">
-				<div class="academics__title">Site map</div>
-				<div class="academics__subtitle">
-					<a href="/about">About us</a><a href="/admissions">Admissions</a><a href="/contact"
-						>Contact</a
-					>
-				</div>
+		<!-- <div class="hs__map"> -->
+		<div class="section">
+			<div class="section__title">Site map</div>
+			<div class="section__subtitle">
+				<a href="/about">About us</a><a href="/admissions">Admissions</a><a href="/contact"
+					>Contact</a
+				>
 			</div>
-			<div class="academics">
-				<div class="academics__title">Staff</div>
-				<div class="academics__subtitle">
-					<a href="/">Professors</a><a href="/">Team</a><a href="/">History</a>
-				</div>
+		</div>
+		<div class="section">
+			<div class="section__title">Staff</div>
+			<div class="section__subtitle">
+				<a href="/">Professors</a><a href="/">Team</a><a href="/">History</a>
 			</div>
-			<div class="academics">
-				<div class="academics__title">Socials</div>
-				<div class="academics__subtitle">
-					<a href="/">Facebook</a><a href="/">Instagram</a><a href="/">Twitter</a>
-				</div>
+		</div>
+		<div class="section">
+			<div class="section__title">Socials</div>
+			<div class="section__subtitle">
+				<a href="/">Facebook</a><a href="/">Instagram</a><a href="/">Twitter</a>
 			</div>
+		</div>
 
-			<!-- <div class="academics">
-				<div class="academics__title">Staff</div>
-				<div class="academics__subtitle">
+		<!-- <div class="section">
+				<div class="section__title">Staff</div>
+				<div class="section__subtitle">
 					<a href="/">Professors</a><a href="/">Team</a><a href="/">History</a>
 				</div>
 			</div> -->
-		</div>
 	</div>
+	<!-- </div> -->
 </div>
 <div class="footer__social">
 	<span class="copyright">
@@ -69,7 +69,6 @@
 
 <style>
 	.hs__address {
-		border-top: 0.5px solid white;
 		padding-block: 0.5rem;
 	}
 	span {
@@ -85,30 +84,44 @@
 		display: flex;
 		justify-content: space-evenly;
 	}
-	.socials {
-		display: flex;
-		gap: 3rem;
-	}
+
 	.full {
 		width: 100%;
 		background: var(--primary-color);
 	}
-	.footer {
+	/* .footer {
 		display: flex;
 		width: 80%;
 		flex-wrap: wrap;
 		justify-content: space-evenly;
 		margin: 0 auto;
 		background: var(--primary-color);
+	} */
+	.footer {
+		width: 80%;
+		display: grid;
+		grid-template-columns: 2fr repeat(3, 1fr);
+		margin: 0 auto;
+		background: var(--primary-color);
 	}
-	.academics {
+	.section {
 		padding: 1rem;
 		color: white;
 	}
-	.academics__title {
+	.section__title {
+		position: relative;
+		height: auto;
 		font-weight: 600;
-		font-size: 1.3rem;
-		border-bottom: 1px solid white;
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+		/* border-bottom: 2px solid white; */
+	}
+	.section__title::after {
+		content: '';
+		display: block;
+		width: 20px;
+		border: 1.5px solid white;
+		color: blue;
 	}
 
 	.hs__contact {
@@ -118,7 +131,9 @@
 	}
 	a {
 		color: var(--special-color);
+		flex: 1 1 25px;
 		text-decoration: none;
+		display: block;
 	}
 	span.address {
 		color: var(--special-color);
@@ -129,6 +144,7 @@
 	}
 
 	.hs__details {
+		flex: 1;
 		color: white;
 		display: flex;
 		flex-direction: column;
@@ -141,19 +157,39 @@
 		max-height: 100%;
 	}
 	.hs__logo {
-		margin-bottom: 0.5rem;
 		max-width: 10rem;
+		height: 44px;
 	}
 
 	.hs__map {
 		flex: 1;
 		display: flex;
 		justify-content: space-around;
-		margin-top: 1.5rem;
 	}
-	.academics__subtitle {
+	.section__subtitle {
+		font-size: 14px;
 		display: flex;
 		flex-direction: column;
-		margin-top: 1rem;
+		gap: 8px;
+		/* paddi */
+	}
+	.section__subtitle a::after {
+		content: '';
+		display: block;
+		width: 0px;
+		border: 0px solid white;
+	}
+	.section__subtitle a:hover::after {
+		border: 1px solid white;
+
+		content: '';
+		display: block;
+		width: 35px;
+		transition: 0.6s ease-in-out all;
+	}
+	@media (width < 840px) {
+		.footer {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 </style>
