@@ -72,6 +72,9 @@ import logo from '$lib/images/logo_variant.png';
 </div>
 
 <style>
+	span.copyright {
+		text-align: center;
+	}
 	.hs__address {
 		padding-block: 0.5rem;
 	}
