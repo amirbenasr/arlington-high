@@ -16,7 +16,7 @@
 			</div>
 			<div class="hs__contact">
 				<a href="mailto:">contact@arlington-high.com</a>
-				<a href="tel:+21654041337">+216 54041337</a>
+				<a href="tel:+21654041337">+216 </a>
 			</div>
 		</div>
 		<!-- <div class="hs__map"> -->
@@ -37,7 +37,9 @@
 		<div class="section">
 			<div class="section__title">Socials</div>
 			<div class="section__subtitle">
-				<a href="/">Facebook</a><a href="/">Instagram</a><a href="/">Twitter</a>
+				<a href="https://www.facebook.com/arlington.highschool.tn">Facebook</a>
+				<!-- <a href="/">Instagram</a> -->
+				<!-- <a href="/">Twitter</a> -->
 			</div>
 		</div>
 

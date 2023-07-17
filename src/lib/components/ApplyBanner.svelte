@@ -32,7 +32,7 @@
 		</a>
 		<hr />
 		<a href="tel:+216 54041337">
-			<span> <i class="fa-solid fa-phone" /> +216 54041337</span>
+			<span> <i class="fa-solid fa-phone" /> +216</span>
 		</a>
 	</div>
 
