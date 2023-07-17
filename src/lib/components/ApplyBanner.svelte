@@ -32,7 +32,7 @@
 		</a>
 		<hr />
 		<a href="tel:+216 54041337">
-			<span> <i class="fa-solid fa-phone" /> +216</span>
+			<span> <i class="fa-solid fa-phone" /> +216 54041337</span>
 		</a>
 	</div>
 
@@ -54,14 +54,16 @@
 	</div>
 	<LangSwitcher />
 
-	<!-- <div class="x">
-		<a class="dismiss" href="http://" on:click={dismiss}>
-			<i class="fa-solid fa-xmark" />
-		</a>
-	</div> -->
 </div>
 
 <style>
+	@media (width < 750px){
+		.banner {
+			text-align: center;
+			gap: 0.2rem !important;
+		}
+
+	}
 	.socials {
 		color: white;
 		display: flex;
@@ -71,10 +73,7 @@
 	i {
 		margin-right: 0.2rem;
 	}
-	.dismiss {
-		display: inline;
-		/* right: 1.5rem; */
-	}
+
 	a {
 		color: white;
 		text-decoration: none;
@@ -93,24 +92,13 @@
 		align-items: center;
 		padding-block: 0.2rem;
 	}
-	.banner__details {
-		display: flex;
-		align-items: center;
-		gap: 1.5rem;
-	}
+	
 	.banner__email {
+		padding: 0.5rem;
 		color: white;
 		font-weight: 700;
 		display: flex;
 		gap: 1rem;
 	}
-	a.button {
-		text-decoration: none;
-		color: white;
-		font-weight: bold;
-		border: 2px solid white;
-		padding-inline: 1.5rem;
-		padding-block: 0.5rem;
-		width: fit-content;
-	}
+
 </style>

@@ -18,7 +18,7 @@
 <style>
 	.container {
 		margin: 0 auto;
-		width: 900px;
+		width: auto;
 		/* background: red; */
 	}
 	h1 {
