@@ -12,6 +12,7 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
 	import LL, { setLocale } from '$i18n/i18n-svelte';
+	import Booking from '$lib/components/Booking.svelte';
 
 	const cards = [
 		{

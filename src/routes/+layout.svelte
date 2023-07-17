@@ -1,6 +1,7 @@
 <script>
 	import { browser } from '$app/environment';
 	import LL, { locale, setLocale } from '$i18n/i18n-svelte';
+	import Booking from '$lib/components/Booking.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import './styles.css';
 
@@ -16,6 +17,8 @@
 </script>
 
 <div class="app">
+<Booking/>
+
 	<Header />
 
 	<main>

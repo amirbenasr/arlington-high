@@ -1,5 +1,7 @@
 <script>
-	import logo from '$lib/images/logo_variant.png';
+	import { base } from '$app/paths';
+	import { locale } from '$i18n/i18n-svelte';
+import logo from '$lib/images/logo_variant.png';
 </script>
 
 <div class="full">
@@ -23,7 +25,7 @@
 		<div class="section">
 			<div class="section__title">Site map</div>
 			<div class="section__subtitle">
-				<a href="/about">About us</a><a href="/admissions">Admissions</a><a href="/contact"
+				<a href="{base}/{$locale}/about">About us</a><a href="{base}/{$locale}/admissions">Admissions</a><a href="{base}/{$locale}/contact"
 					>Contact</a
 				>
 			</div>
