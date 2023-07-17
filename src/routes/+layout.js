@@ -1,7 +1,6 @@
 import { loadLocaleAsync } from '$i18n/i18n-util.async';
 import { i18nObject } from '$i18n/i18n-util.js';
 
-export const prerender = false;
 export const load = async ({ data: { locale } }) => {
 	// load dictionary into memory
 	await loadLocaleAsync(locale);
