@@ -12,6 +12,7 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
 	import LL, { setLocale } from '$i18n/i18n-svelte';
+	import Booking from '$lib/components/Booking.svelte';
 
 	const cards = [
 		{
@@ -239,7 +240,7 @@
 		width: 80%;
 		margin: 0 auto;
 		border-radius: 2px;
-		padding: 2rem;
+		padding-block: 2rem;
 		display: flex;
 		gap: 1rem;
 		flex-wrap: wrap-reverse;

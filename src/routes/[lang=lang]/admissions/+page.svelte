@@ -57,5 +57,4 @@
 	<div class="bb">
 		<Button title="Apply Now" link="#" style="outlined" />
 	</div>
-	{$LL.HI({ name: 'amir' })}
 </Pagelayout>

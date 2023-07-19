@@ -16,9 +16,16 @@
 </div>
 
 <style>
+
+@media (width < 780px)
+{
+	.container {
+		width: auto !important;
+	}
+}
 	.container {
 		margin: 0 auto;
-		width: 900px;
+		width: 80%;
 		/* background: red; */
 	}
 	h1 {
