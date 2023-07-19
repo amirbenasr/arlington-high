@@ -16,7 +16,7 @@
 			</div>
 			<div class="hs__contact">
 				<a href="mailto:">contact@arlington-high.com</a>
-				<a href="tel:+21654041337">+216 </a>
+				<a href="tel:+21654041337">+216 55555555</a>
 			</div>
 		</div>
 		<!-- <div class="hs__map"> -->
