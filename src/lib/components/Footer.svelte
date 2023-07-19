@@ -1,7 +1,7 @@
 <script>
 	import { base } from '$app/paths';
 	import { locale } from '$i18n/i18n-svelte';
-import logo from '$lib/images/logo_variant.png';
+	import logo from '$lib/images/logo_variant.png';
 </script>
 
 <div class="full">
@@ -18,16 +18,16 @@ import logo from '$lib/images/logo_variant.png';
 			</div>
 			<div class="hs__contact">
 				<a href="mailto:">contact@arlington-high.com</a>
-				<a href="tel:+21654041337">+216 55555555</a>
+				<a href="tel:+21655555555">+216 55555555</a>
 			</div>
 		</div>
 		<!-- <div class="hs__map"> -->
 		<div class="section">
 			<div class="section__title">Site map</div>
 			<div class="section__subtitle">
-				<a href="{base}/{$locale}/about">About us</a><a href="{base}/{$locale}/admissions">Admissions</a><a href="{base}/{$locale}/contact"
-					>Contact</a
-				>
+				<a href="{base}/{$locale}/about">About us</a><a href="{base}/{$locale}/admissions"
+					>Admissions</a
+				><a href="{base}/{$locale}/contact">Contact</a>
 			</div>
 		</div>
 		<div class="section">

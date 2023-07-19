@@ -31,8 +31,8 @@
 			<span> <i class="fa-regular fa-envelope" /> application@arlington-high.com</span>
 		</a>
 		<hr />
-		<a href="tel:+216 54041337">
-			<span> <i class="fa-solid fa-phone" /> +216 54041337</span>
+		<a href="tel:+216 55555555">
+			<span> <i class="fa-solid fa-phone" /> +216 55555555</span>
 		</a>
 	</div>
 
@@ -53,16 +53,14 @@
 		</a>
 	</div>
 	<LangSwitcher />
-
 </div>
 
 <style>
-	@media (width < 750px){
+	@media (width < 750px) {
 		.banner {
 			text-align: center;
 			gap: 0.2rem !important;
 		}
-
 	}
 	.socials {
 		color: white;
@@ -92,7 +90,7 @@
 		align-items: center;
 		padding-block: 0.2rem;
 	}
-	
+
 	.banner__email {
 		padding: 0.5rem;
 		color: white;
@@ -100,5 +98,4 @@
 		display: flex;
 		gap: 1rem;
 	}
-
 </style>
