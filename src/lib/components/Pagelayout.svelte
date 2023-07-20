@@ -16,7 +16,11 @@
 </div>
 
 <style>
-
+:global(h2)
+{
+	font-size: 2rem;
+	color: var(--primary-color);
+}
 @media (width < 780px)
 {
 	.container {

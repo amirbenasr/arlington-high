@@ -124,7 +124,7 @@
 		color: #7f228f !important;
 		text-transform: uppercase;
 		font-weight: 700;
-		font-size: 1.9rem !important;
+		font-size: 1.7rem !important;
 		/* margin-left: 1.3rem; */
 		border-bottom: #7f228f 1px solid;
 	}
@@ -167,12 +167,12 @@
 		flex: 1;
 	}
 	h2 {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		color: var(--primary-color);
 		/* text-align: center; */
 	}
 	h3 {
-		font-size: 2rem;
+		font-size: 1.7rem;
 		color: var(--primary-color);
 		display: inline-block;
 		margin-bottom: 0.7rem;
