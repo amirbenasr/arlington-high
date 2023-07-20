@@ -118,7 +118,6 @@
 				width="auto"
 				height="80%"
 				style="border:0;"
-				
 				loading="lazy"
 				referrerpolicy="no-referrer-when-downgrade"
 			/>
@@ -164,8 +163,11 @@
 		margin-bottom: 1rem;
 	}
 	.map {
-		flex: 1;
-		flex-direction: column;
+		flex: 1 0 25% ;
+		
+		display: flex;
+		/* flex-wrap: wrap; */
+		flex-direction: column !important;
 	}
 	.form {
 		flex: 1;
