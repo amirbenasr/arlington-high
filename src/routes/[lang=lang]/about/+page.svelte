@@ -50,7 +50,7 @@
 				<div class="leading description">
 					<h3>Academic Excellence</h3>
 					<p>
-						<span>W</span>e aim to deliver a rigorous and comprehensive American curriculum,
+						<span class="uppercase">W</span>e aim to deliver a rigorous and comprehensive American curriculum,
 						supported by highly qualified educators, to ensure that our students are academically
 						prepared to excel in the US educational system and beyond.
 					</p>
@@ -70,7 +70,7 @@
 				<div class="leading description">
 					<h3>Language Proficiency</h3>
 					<p>
-						<span>W</span>e recognize the importance of language skills in a globalized world. Our
+						<span class="uppercase">W</span>e recognize the importance of language skills in a globalized world. Our
 						goal is to offer language programs that enable students to achieve fluency in English,
 						empowering them to communicate effectively and confidently in an English-speaking
 						academic environment.
@@ -81,7 +81,7 @@
 				<div class="leading description">
 					<h3>Technology Integration</h3>
 					<p>
-						<span>R</span>ecognizing the importance of technology in modern education, we aim to
+						<span class="uppercase">R</span>ecognizing the importance of technology in modern education, we aim to
 						integrate technology into the learning process. By providing access to advanced tools
 						and resources, we equip our students with the digital literacy essential for success in
 						the 21st-century job market.
@@ -98,7 +98,7 @@
 				<div class="trailing description">
 					<h3>College and Career Readiness</h3>
 					<p>
-						<span>O</span>ur focus is on preparing students for success beyond high school. We offer
+						<span class="uppercase">O</span>ur focus is on preparing students for <span class="special">success</span> beyond high school. We offer
 						guidance and support in the college application process, including assistance with
 						standardized tests and college admissions. Additionally, we provide career counseling
 						and internships to help students explore potential career paths.
@@ -113,7 +113,13 @@
 	:root {
 		--border-size: 4px;
 	}
-	span {
+	span.special {
+		background: #7f228f;
+		color: white !important;
+		padding-inline: 0.1rem;
+		/* font-weight: 500; */
+	}
+	span.uppercase {
 		display: inline-block;
 		color: #7f228f !important;
 		text-transform: uppercase;
@@ -123,6 +129,7 @@
 		border-bottom: #7f228f 1px solid;
 	}
 
+	
 	.description {
 		width: 100%;
 		/* &::after {
@@ -145,12 +152,12 @@
 		&:nth-child(odd) {
 			border-top: var(--border-size) solid #7f228f;
 			border-right: var(--border-size) solid #7f228f;
-			box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+			/* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 		}
 		&:nth-child(even) {
 			border-top: var(--border-size) solid #7f228f;
 			border-left: var(--border-size) solid #7f228f;
-			box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+			/* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 		}
 	}
 	.leading {
