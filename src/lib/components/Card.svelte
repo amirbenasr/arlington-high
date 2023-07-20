@@ -86,9 +86,9 @@
 		<span>
 			{content}
 		</span>
-		<slot class="btn">
+		<!-- <slot class="btn">
 			<Button title="Learn More" link="#" style="borderless" />
-		</slot>
+		</slot> -->
 	</div>
 </div>
 
