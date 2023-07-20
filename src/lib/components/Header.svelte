@@ -51,7 +51,7 @@
 		<ul class="nav">
 			<li><a href="{base}/{$locale}/">Home</a></li>
 			<li><a href="{base}/{$locale}/about">About us</a></li>
-			<li><a href="{base}/{$locale}/admissions">Admissions</a></li>
+			<!-- <li><a href="{base}/{$locale}/admissions">Admissions</a></li> -->
 			<li><a href="{base}/{$locale}/contact">Contact</a></li>
 		</ul>
 	</div>
