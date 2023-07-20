@@ -32,28 +32,7 @@
 		(e.g., transcripts, recommendation letters, essays). Make sure to double-check your application
 		for accuracy before submitting.
 	</p>
-	<h2>Pay Application Fee</h2>
-	<p>
-		Submit the required application fee, if applicable. Details regarding the payment process will
-		be provided within the online application portal.
-	</p>
-	<h2>Optional: Schedule a Campus Visit</h2>
-	<p>
-		If you wish to get a firsthand experience of our campus, we encourage you to schedule a campus
-		visit. This will give you the opportunity to tour our state-of-the-art facilities, meet the
-		founding faculty members, and learn more about our innovative approach to education.
-	</p>
-	<h2>Application Review and Notification</h2>
-	Once your application is submitted, our admissions team will review your materials carefully. The review
-	process may take some time, but rest assured that we are dedicated to considering each applicant thoroughly.
-	You will be notified of our admission decision by a specified date.
-	<h2>Acceptance and Enrollment</h2>
-	<p>
-		Congratulations on being accepted to Arlington High School! If you receive an acceptance letter,
-		follow the instructions provided to secure your spot by completing the enrollment process within
-		the designated timeframe. This may include submitting additional forms, attending an orientation
-		program, and submitting any necessary enrollment fees.
-	</p>
+
 	<div class="bb">
 		<Button title="Apply Now" link="#" style="outlined" />
 	</div>
