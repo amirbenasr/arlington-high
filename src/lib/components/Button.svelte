@@ -38,6 +38,9 @@
 {/if}
 
 <style>
+	a:hover {
+		transform: translateY(-8px) !important;
+	}
 	@media (width < 750px) {
 		a {
 			margin: 0.2rem !important;
@@ -46,8 +49,10 @@
 	a {
 		text-decoration: none;
 		display: block;
+		margin-top: 8px;
 		padding: 0.3rem;
 		box-sizing: border-box;
+		transition: 0.4s ease-in-out;
 	}
 	a.button {
 		color: white;

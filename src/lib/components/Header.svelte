@@ -36,47 +36,38 @@
 
 <ApplyBanner />
 <nav>
-	<div
-		class="logo"
-		on:click={() => {
-			goto(base + '/' + $locale);
-		}}
-	>
-		<img src={Arlingtonlogo} alt="" srcset="" class="logo_img" />
-	</div>
-	<!-- <a on:click={() => toggleMenu()}>
-		<i class="menu_button fa fa-bars fa-xl" />
-	</a> -->
-	<div class="links">
-		<ul class="nav">
+	<img src={Arlingtonlogo} alt="" srcset="" class="logo_img" />
+	<!-- <div class="links"> -->
+	<div class="nav">
+		<ul>
 			<li><a href="{base}/{$locale}/">Home</a></li>
 			<li><a href="{base}/{$locale}/about">About us</a></li>
 			<!-- <li><a href="{base}/{$locale}/admissions">Admissions</a></li> -->
 			<li><a href="{base}/{$locale}/contact">Contact</a></li>
 		</ul>
 	</div>
-	<Button link="#" title="Apply Now" style="outlined" primary={true} />
+	<!-- </div> -->
+
+	<!-- <div class="menu_button">
+		<a on:click={() => toggleMenu()}>
+			<i class="menu_button fa fa-bars fa-xl" />
+		</a>
+	</div> -->
+
+	<!-- <Button link="#" title="Apply Now" style="outlined" primary={true} /> -->
 </nav>
 
 <style>
-	ul.visible {
-		display: flex !important ;
-		align-items: center;
-		justify-content: space-around;
-	}
 	@media (width < 780px) {
-		.menu_button {
-			display: inline-block !important;
-		}
-		.links {
-			display: none !important;
+		nav {
+			height: auto !important;
 		}
 	}
 
 	a {
 		text-decoration: none;
 		color: var(--primary-color);
-		display: inline-block;
+		display: inline;
 		transition: all 1s ease-in;
 	}
 	a::after {
@@ -90,30 +81,39 @@
 		transform: scaleX(1);
 	}
 
-	.logo {
-		cursor: pointer;
-		text-align: center;
-		width: 134px;
-		/* scale: 5; */
-	}
-
-	ul.nav {
-		display: flex;
-		flex-direction: row;
-		gap: 2rem;
-	}
 	li {
 		list-style: none;
 		font-weight: 600;
 	}
 
+	.nav {
+		float: right;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		text-align: center;
+		height: auto;
+		align-items: center;
+	}
+	ul {
+		display: flex;
+		gap: 1rem;
+	}
+	.logo_img {
+		display: inline-block;
+		width: 8.8rem;
+	}
 	nav {
 		background: white;
 		position: relative;
-		width: 100%;
-		height: 70px;
+		overflow: hidden;
+		width: 80%;
+		margin: 0 auto;
 		display: flex;
-		justify-content: space-around;
 		align-items: center;
+		justify-content: space-between;
+		height: auto;
+		padding: 1rem;
 	}
 </style>

@@ -132,7 +132,7 @@
 			<div class="info">
 				<div class="info__content">
 					<div class="info__title">Apply for Admission</div>
-					<div class="info__subtitle">2023 Pre-enrollement are now open</div>
+					<div class="info__subtitle">2023 Pre-enrollment are now open</div>
 					<div class="info__description">
 						<p>
 							Are you ready to embark on an extraordinary educational journey? Take the first step
@@ -236,6 +236,10 @@
 		width: 90%;
 		margin: 0 auto;
 	}
+
+	.services > :global(:nth-child(2)) {
+		transform: translateY(-20px);
+	}
 	.services {
 		width: 80%;
 		margin: 0 auto;
@@ -243,6 +247,9 @@
 		padding-block: 2rem;
 		display: flex;
 		gap: 1rem;
+		transform: translateY(-110px);
+		position: relative;
+		z-index: 55;
 		flex-wrap: wrap-reverse;
 		align-items: center;
 	}

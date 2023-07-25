@@ -194,7 +194,7 @@
 	}
 
 	.services__header {
-		padding: 1rem;
+		padding: 0.5rem;
 		display: flex;
 		gap: 1rem;
 		align-items: center;
@@ -213,9 +213,13 @@
 		flex-direction: column;
 		gap: 1rem;
 		align-items: center;
+		border-radius: 5px;
+		border: 1px solid #ccc;
+		box-shadow: rgba(1, 1, 1, 0.05) 5px 5px;
 	}
 	span.title {
 		color: white;
+		font-weight: bold;
 	}
 	span.subtitle {
 		font-weight: 300;

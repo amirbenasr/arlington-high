@@ -43,11 +43,14 @@
 	}
 </script>
 
-<Pagelayout title="Contact">
+<Pagelayout
+	title="Contact"
+	image="https://images.pexels.com/photos/821754/pexels-photo-821754.jpeg"
+>
 	<h2>Contact Us</h2>
 	<p>
-		We're here to assist you with any inquiries or concerns you may have. Please feel free to reach
-		out to our team using the contact information provided below:
+		We're here to assist you with any inquiries or concerns you may have. <br /> Please feel free to
+		reach out to our team using the contact information provided below:
 	</p>
 
 	<div class="contact container" class:error={!proceed}>
@@ -134,6 +137,11 @@
 </Pagelayout>
 
 <style>
+	h2 {
+		color: var(--primary-color);
+		font-size: 2.5rem;
+		margin-top: 2rem;
+	}
 	.buttonload {
 		background-color: #04aa6d;
 		color: white;
@@ -161,10 +169,11 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
-		margin-bottom: 1rem;
+		margin-block: 2rem;
 	}
 	.map {
-		flex: 1;
+		flex: 1 !important;
+		display: flex;
 		flex-direction: column;
 	}
 	.form {
