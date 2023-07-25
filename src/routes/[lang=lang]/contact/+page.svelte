@@ -170,14 +170,15 @@
 		gap: 1rem;
 		margin-block: 2rem;
 	}
+	.contact > * {
+		flex: 1 1 340px;
+	}
 	.map {
-		flex: 1 !important;
 		display: flex;
 		flex-direction: column;
+		gap: 1rem;
 	}
-	.form {
-		flex: 1;
-	}
+
 	.form > * > * {
 		display: block;
 	}
@@ -209,6 +210,7 @@
 		border: none;
 		border-radius: 4px;
 		cursor: pointer;
+		width: 100%;
 	}
 
 	/* When moving the mouse over the submit button, add a darker green color */
