@@ -3,6 +3,8 @@
 	import Button from './Button.svelte';
 	import { gsap } from 'gsap';
 	import LangSwitcher from './LangSwitcher.svelte';
+	import { flip } from 'svelte/animate';
+	import { quintOut } from 'svelte/easing';
 
 	/**
 	 * @type {HTMLDivElement}

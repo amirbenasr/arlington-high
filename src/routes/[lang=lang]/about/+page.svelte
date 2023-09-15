@@ -43,7 +43,7 @@
 
 	<article />
 	<article>
-		<h2>Goals</h2>
+		<!-- <h2>Goals</h2>
 
 		<div class="collage">
 			<div class="collage_item">
@@ -74,7 +74,7 @@
 					<h2>College and Career Readiness</h2>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- <ul>
 			<li>
 				<div class="leading description">

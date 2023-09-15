@@ -12,7 +12,7 @@
 			</div>
 			<div class="hs__address">
 				<span class="address">
-					1033 Lac Tunis <br />
+					1033 Lac 2 Tunis <br />
 					Avenue de la bourse
 				</span>
 			</div>
@@ -35,13 +35,13 @@
 				<a href="tel:+21698110698">
 					<span>
 						<i class="fa-solid fa-phone" />
-					</span>98110698
+					</span>+216 98.110.698
 				</a>
 				<!-- <a href="tel:+21698110698">98110699</a> -->
 				<a href="tel:+21698110699">
 					<span>
 						<i class="fa-solid fa-phone" />
-					</span>98110699
+					</span>+216 98.110.699
 				</a>
 			</div>
 		</div>

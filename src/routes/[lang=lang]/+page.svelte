@@ -2,7 +2,7 @@
 	import Card from '$lib/components/Card.svelte';
 
 	import student from '$lib/images/student.jpg';
-	import students from '$lib/images/student_girl.jpg';
+	import students from '$lib/images/hero.jpeg';
 	import academics from '$lib/images/academics.jpg';
 	import sports from '$lib/images/sports.jpg';
 	import professors from '$lib/images/professors.png';

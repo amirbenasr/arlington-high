@@ -18,18 +18,36 @@
 	 * @param {any[]} menuButtons
 	 */
 	function clearMenu(menuButtons) {}
+	let divElemet;
 	onMount(async () => {
+		divElemet = document.createElement('div');
+		divElemet.addEventListener('click', function () {
+			if (nav.classList.contains('open')) {
+				nav.classList.toggle('open');
+				this.style.cssText = 'position:absolute;top:0;width:100%;height:100%;z-index:-1;';
+			}
+		});
+		divElemet.style.cssText = 'position:absolute;top:0;width:100%;height:100%;z-index:-1;';
+		document.body.appendChild(divElemet);
+		window.addEventListener('click', function (e) {
+			// if (nav.classList.contains('open')) {
+			// 	nav.classList.remove('open');
+			// }
+		});
 		let mm = gsap.matchMedia();
 
 		let menuButtons = document.querySelectorAll('.nav ul a');
 		menuButtons.forEach((button) => {
 			button.addEventListener('click', function () {
 				toggleMenu();
+				divElemet.style.cssText =
+					'position:absolute;top:0;width:100%;height:100%;;opacity:0;z-index:-1;';
 			});
 		});
 	});
 
 	function toggleMenu() {
+		divElemet.style.cssText = 'position:absolute;top:0;width:100%;height:100%;z-index:100;';
 		nav.classList.toggle('open');
 	}
 </script>
@@ -46,6 +64,7 @@
 			<i class="menu_button fa fa-bars fa-xl" />
 		</a>
 	</div>
+
 	<div class="nav" bind:this={nav}>
 		<ul>
 			<li><a href="{base}/{$locale}/">Home</a></li>
@@ -67,7 +86,7 @@
 	}
 	:global(.open) {
 		visibility: visible !important;
-		z-index: 10;
+		z-index: 101;
 	}
 	@media (width < 780px) {
 		.nav {

@@ -42,6 +42,7 @@ html {
 	4. Improve text rendering
   */
 body {
+	position: relative;
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
 	font-family: 'Poppins', sans-serif;

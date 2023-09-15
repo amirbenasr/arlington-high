@@ -129,7 +129,7 @@
 				<a href="mailto:contact@arlington-high.com">contact@arlington-high.com</a>
 				<br />
 				<label for="phone">Phone number:</label>
-				<a href="tel:+216">+2165555555</a>
+				<a href="tel:+21698110698">+216.98.110.698</a>
 			</div>
 		</div>
 	</div>
