@@ -34,8 +34,8 @@
 		<!-- +216 93 169 192: +216 98 110 698 / +216 98 110 699 -->
 
 		<span>
-			<i class="fa-solid fa-phone" /> <a href="tel:+21693169192">93169192</a> <span>|</span>
-			<a href="tel:+21698110699">98110699</a></span
+			<i class="fa-solid fa-phone" /> <a href="tel:+21698110698">98110698</a> <span>|</span>
+			<a href="tel:+21698110698">98110699</a></span
 		>
 	</div>
 

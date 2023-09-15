@@ -17,8 +17,7 @@
 				</span>
 			</div>
 			<div class="hs__contact">
-				<a href="mailto:">contact@arlington-high.com</a>
-				<a href="tel:+21655555555">+216 55555555</a>
+				<a href="mailto:contact@arlington-high.com">contact@arlington-high.com</a>
 			</div>
 		</div>
 		<!-- <div class="hs__map"> -->
@@ -31,9 +30,19 @@
 			</div>
 		</div>
 		<div class="section">
-			<div class="section__title">Staff</div>
+			<div class="section__title">Contact</div>
 			<div class="section__subtitle">
-				<a href="/">Professors</a><a href="/">Team</a><a href="/">History</a>
+				<a href="tel:+21698110698">
+					<span>
+						<i class="fa-solid fa-phone" />
+					</span>98110698
+				</a>
+				<!-- <a href="tel:+21698110698">98110699</a> -->
+				<a href="tel:+21698110699">
+					<span>
+						<i class="fa-solid fa-phone" />
+					</span>98110699
+				</a>
 			</div>
 		</div>
 		<div class="section">

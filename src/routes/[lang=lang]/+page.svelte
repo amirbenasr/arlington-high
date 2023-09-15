@@ -253,7 +253,7 @@
 		padding-block: 2rem;
 		display: flex;
 		gap: 1rem;
-		transform: translateY(-110px);
+		/* transform: translateY(-110px); */
 		position: relative;
 		z-index: 55;
 		flex-wrap: wrap-reverse;
