@@ -11,11 +11,9 @@ import { initFormatters } from './formatters'
 
 import { loadedFormatters, loadedLocales, locales } from './i18n-util'
 
-import ar from './ar'
 import en from './en'
 
 const localeTranslations = {
-	ar,
 	en,
 }
 

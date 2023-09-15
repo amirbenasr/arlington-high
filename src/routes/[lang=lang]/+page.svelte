@@ -13,7 +13,9 @@
 	import { onMount } from 'svelte';
 	import LL, { setLocale } from '$i18n/i18n-svelte';
 	import Booking from '$lib/components/Booking.svelte';
-
+	import { base } from '$app/paths';
+	import { locale } from '$i18n/i18n-svelte';
+	import slogan from '$lib/images/slogan.svg';
 	const cards = [
 		{
 			icon: 'fa-school',
@@ -109,15 +111,19 @@
 			<div class="content">
 				<span class="content__subtitle">Arlington High School | Tunisia</span>
 				<span class="content__title">Elevate Your High School Experience</span>
+				<img src={slogan} alt="" srcset="" />
 				<span class="content__description"
 					>We believe that there is nothing more important than skillful education. Doing the right
 					thing. at the right time</span
 				>
 
-				<Button title="Apply Now" link="#" style="outlined" />
+				<Button title="Apply Now" link="{base}/{$locale}/contact" style="outlined" />
 			</div>
 		</div>
-		<img class="student_girl" src={students} alt="" srcset="" />
+
+		<div class="">
+			<img class="student_girl" src={students} alt="" srcset="" />
+		</div>
 	</div>
 	<div class="wrapper_tr">
 		<div class="services">
@@ -141,7 +147,7 @@
 							you.
 						</p>
 					</div>
-					<Button title="Apply now" link="#" style="cta" />
+					<Button title="Apply now" link="{base}/{$locale}/contact" style="cta" />
 				</div>
 			</div>
 		</div>
@@ -314,7 +320,7 @@
 
 	@media (width < 750px) {
 		img.student_girl {
-			object-position: 70% !important ;
+			object-position: center center;
 		}
 		.info__content {
 			gap: 0.4rem !important;
@@ -345,10 +351,11 @@
 		}
 		.right-banner {
 			position: absolute !important;
-			height: 50% !important;
-			width: 80% !important;
-			top: 25% !important;
-			right: 12.5% !important;
+			height: min-content !important;
+			padding: 1rem;
+			width: auto !important;
+			bottom: 0px !important;
+			/* top: 25% !important; */
 		}
 		.content {
 			align-items: center !important;
@@ -368,6 +375,9 @@
 		.hero {
 			height: calc(100vh - 75px) !important;
 			width: 100%;
+		}
+		.services {
+			transform: unset;
 		}
 	}
 	a.apply {
@@ -392,7 +402,7 @@
 		gap: 1.5rem;
 	}
 	.content__subtitle {
-		font-weight: 200;
+		font-weight: 500;
 		letter-spacing: 0.3rem;
 	}
 	.content__title {
@@ -411,6 +421,7 @@
 	}
 
 	.hero {
+		display: flex !important;
 		height: calc(100vh - 94px) !important;
 		width: 100%;
 		position: relative;
@@ -427,12 +438,9 @@
 	.right-banner {
 		background: var(--primary-color);
 		opacity: 0.9;
-		position: absolute;
 		z-index: 55;
 		width: 50%;
 		height: 100%;
-		right: 0;
-		top: 0;
 	}
 
 	a.button {

@@ -31,9 +31,12 @@
 			<span> <i class="fa-regular fa-envelope" /> application@arlington-high.com</span>
 		</a>
 		<hr />
-		<a href="tel:+216 55555555">
-			<span> <i class="fa-solid fa-phone" /> +216 55555555</span>
-		</a>
+		<!-- +216 93 169 192: +216 98 110 698 / +216 98 110 699 -->
+
+		<span>
+			<i class="fa-solid fa-phone" /> <a href="tel:+21693169192">93169192</a> <span>|</span>
+			<a href="tel:+21698110699">98110699</a></span
+		>
 	</div>
 
 	<!-- <div class="banner__details">
@@ -48,9 +51,9 @@
 		<a href="https://www.facebook.com/arlington.highschool.tn">
 			<i class="fa-brands fa-instagram" />
 		</a>
-		<a href="https://www.facebook.com/arlington.highschool.tn">
+		<!-- <a href="https://www.facebook.com/arlington.highschool.tn">
 			<i class="fa-brands fa-twitter" />
-		</a>
+		</a> -->
 	</div>
 	<LangSwitcher />
 </div>

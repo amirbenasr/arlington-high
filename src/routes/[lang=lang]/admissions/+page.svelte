@@ -2,6 +2,8 @@
 	import Button from '$lib/components/Button.svelte';
 	import Pagelayout from '$lib/components/Pagelayout.svelte';
 	import LL from '$i18n/i18n-svelte';
+	import { base } from '$app/paths';
+	import { locale } from '$i18n/i18n-svelte';
 </script>
 
 <Pagelayout title="Admissions">
@@ -34,6 +36,12 @@
 	</p>
 
 	<div class="bb">
-		<Button title="Apply Now" link="#" style="outlined" />
+		<Button link="{base}/{$locale}/contact" title="Apply Now" style="outlined" />
 	</div>
 </Pagelayout>
+
+<style>
+	h2 {
+		color: var(--primary-color);
+	}
+</style>

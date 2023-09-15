@@ -1,5 +1,5 @@
 <script>
-	import Arlingtonlogo from '$lib/images/logo_ar.png';
+	import Arlingtonlogo from '$lib/images/arlington_last.png';
 	import gsap from 'gsap';
 	import { onMount } from 'svelte';
 	import Button from './Button.svelte';
@@ -12,6 +12,7 @@
 	 * @type {{ play: () => void; reverse: () => void; }}
 	 */
 	let animate;
+	let nav;
 	let menuOpen = false;
 	/**
 	 * @param {any[]} menuButtons
@@ -20,64 +21,90 @@
 	onMount(async () => {
 		let mm = gsap.matchMedia();
 
-		let menuButtons = document.querySelectorAll('a');
-		menuButtons.forEach((button) => {});
+		let menuButtons = document.querySelectorAll('.nav ul a');
+		menuButtons.forEach((button) => {
+			button.addEventListener('click', function () {
+				toggleMenu();
+			});
+		});
 	});
+
 	function toggleMenu() {
-		console.log('calling this');
-		menuOpen = !menuOpen;
-		if (menuOpen) {
-			animate.play();
-		} else {
-			animate.reverse();
-		}
+		nav.classList.toggle('open');
 	}
 </script>
 
 <ApplyBanner />
 <nav>
-	<img src={Arlingtonlogo} alt="" srcset="" class="logo_img" />
+	<a href="{base}/{$locale}/">
+		<img src={Arlingtonlogo} alt="" srcset="" class="logo_img" />
+	</a>
 	<!-- <div class="links"> -->
-	<div class="nav">
-		<ul>
-			<li><a href="{base}/{$locale}/">Home</a></li>
-			<li><a href="{base}/{$locale}/about">About us</a></li>
-			<!-- <li><a href="{base}/{$locale}/admissions">Admissions</a></li> -->
-			<li><a href="{base}/{$locale}/contact">Contact</a></li>
-		</ul>
-	</div>
-	<!-- </div> -->
 
-	<!-- <div class="menu_button">
+	<div class="menu_button">
 		<a on:click={() => toggleMenu()}>
 			<i class="menu_button fa fa-bars fa-xl" />
 		</a>
-	</div> -->
+	</div>
+	<div class="nav" bind:this={nav}>
+		<ul>
+			<li><a href="{base}/{$locale}/">Home</a></li>
+			<li><a href="{base}/{$locale}/about">About</a></li>
+			<li><a href="{base}/{$locale}/admissions">Admissions</a></li>
+			<li><a href="{base}/{$locale}/contact">Contact</a></li>
+		</ul>
+	</div>
+
+	<!-- </div> -->
 
 	<!-- <Button link="#" title="Apply Now" style="outlined" primary={true} /> -->
 </nav>
 
 <style>
+	.nav ul {
+		text-decoration: none;
+		padding: 1rem;
+	}
+	:global(.open) {
+		visibility: visible !important;
+		z-index: 10;
+	}
 	@media (width < 780px) {
-		nav {
-			height: auto !important;
+		.nav {
+			visibility: hidden;
+			position: absolute;
+			top: 50px;
+			right: 0px;
+			display: flex !important;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background: whitesmoke;
+		}
+		.nav ul {
+			flex-direction: column;
+		}
+	}
+	@media (width > 781px) {
+		.menu_button {
+			display: none;
 		}
 	}
 
-	a {
+	.nav ul a {
 		text-decoration: none;
 		color: var(--primary-color);
 		display: inline;
-		transition: all 1s ease-in;
+		/* transition: all 1s ease-in; */
 	}
-	a::after {
+	.nav ul a::after {
 		display: block;
 		content: '';
 		border-bottom: solid 3px var(--primary-color);
 		transform: scaleX(0);
-		transition: transform 250ms ease-in-out;
+		/* transition: transform 250ms ease-in-out; */
 	}
-	a:hover::after {
+	.nav ul a:hover::after {
 		transform: scaleX(1);
 	}
 
@@ -107,7 +134,6 @@
 	nav {
 		background: white;
 		position: relative;
-		overflow: hidden;
 		width: 80%;
 		margin: 0 auto;
 		display: flex;
@@ -115,5 +141,8 @@
 		justify-content: space-between;
 		height: auto;
 		padding: 1rem;
+	}
+	.menu_button {
+		position: relative !important;
 	}
 </style>

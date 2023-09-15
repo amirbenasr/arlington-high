@@ -23,7 +23,6 @@ export const baseLocale = 'en'
 
 /** @type { Locales[] } */
 export const locales = [
-	'ar',
 	'en'
 ]
 
