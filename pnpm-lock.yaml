@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   gsap:
     specifier: ^3.12.2
@@ -53,7 +57,7 @@ devDependencies:
     version: 4.2.0
   svelte-check:
     specifier: ^3.5.1
-    version: 3.5.1(svelte@4.2.0)
+    version: 3.5.1(postcss@8.4.29)(svelte@4.2.0)
   typescript:
     specifier: ^5.2.2
     version: 5.2.2
@@ -1748,7 +1752,7 @@ packages:
       has-flag: 4.0.0
     dev: true
 
-  /svelte-check@3.5.1(svelte@4.2.0):
+  /svelte-check@3.5.1(postcss@8.4.29)(svelte@4.2.0):
     resolution: {integrity: sha512-+Zb4iHxAhdUtcUg/WJPRjlS1RJalIsWAe9Mz6G1zyznSs7dDkT7VUBdXc3q7Iwg49O/VrZgyJRvOJkjuBfKjFA==}
     hasBin: true
     peerDependencies:
@@ -1761,7 +1765,7 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 4.2.0
-      svelte-preprocess: 5.0.4(svelte@4.2.0)(typescript@5.2.2)
+      svelte-preprocess: 5.0.4(postcss@8.4.29)(svelte@4.2.0)(typescript@5.2.2)
       typescript: 5.2.2
     transitivePeerDependencies:
       - '@babel/core'
@@ -1809,7 +1813,7 @@ packages:
       svelte: 4.2.0
     dev: true
 
-  /svelte-preprocess@5.0.4(svelte@4.2.0)(typescript@5.2.2):
+  /svelte-preprocess@5.0.4(postcss@8.4.29)(svelte@4.2.0)(typescript@5.2.2):
     resolution: {integrity: sha512-ABia2QegosxOGsVlsSBJvoWeXy1wUKSfF7SWJdTjLAbx/Y3SrVevvvbFNQqrSJw89+lNSsM58SipmZJ5SRi5iw==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
@@ -1850,6 +1854,7 @@ packages:
       '@types/pug': 2.0.6
       detect-indent: 6.1.0
       magic-string: 0.27.0
+      postcss: 8.4.29
       sorcery: 0.11.0
       strip-indent: 3.0.0
       svelte: 4.2.0
@@ -2015,7 +2020,3 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false

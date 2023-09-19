@@ -1,9 +1,7 @@
 <script>
-	import { onMount } from 'svelte';
 	import Pagelayout from '$lib/components/Pagelayout.svelte';
 	import { enhance, applyAction } from '$app/forms';
-	import { get } from 'svelte/store';
-
+	import phone from '$lib/images/phone.webp';
 	export let data;
 
 	let sendingEmail = false;
@@ -43,10 +41,7 @@
 	}
 </script>
 
-<Pagelayout
-	title="Contact"
-	image="https://images.pexels.com/photos/821754/pexels-photo-821754.jpeg"
->
+<Pagelayout title="Contact" image={phone}>
 	<h2>Contact Us</h2>
 	<p>
 		We're here to assist you with any inquiries or concerns you may have. <br /> Please feel free to

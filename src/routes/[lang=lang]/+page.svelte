@@ -1,11 +1,11 @@
 <script>
 	import Card from '$lib/components/Card.svelte';
 
-	import student from '$lib/images/student.jpg';
-	import students from '$lib/images/hero.jpeg';
-	import academics from '$lib/images/academics.jpg';
-	import sports from '$lib/images/sports.jpg';
-	import professors from '$lib/images/professors.png';
+	import student from '$lib/images/student.webp';
+	import students from '$lib/images/hero.webp';
+	import academics from '$lib/images/academics.webp';
+	import sports from '$lib/images/sports.webp';
+	import professors from '$lib/images/professors.webp';
 	import Footer from '$lib/components/Footer.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import { gsap } from 'gsap';

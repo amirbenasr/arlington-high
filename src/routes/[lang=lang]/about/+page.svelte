@@ -1,17 +1,12 @@
 <script>
 	import Pagelayout from '$lib/components/Pagelayout.svelte';
 	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
-	import languages from '$lib/images/languages.jpg';
-	import technology from '$lib/images/technology.jpg';
-	import female from '$lib/images/female.jpg';
+	import about from '$lib/images/about.webp';
+
 	onMount(() => {});
 </script>
 
-<Pagelayout
-	title="About Us"
-	image="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg"
->
+<Pagelayout title="About Us" image={about}>
 	<article>
 		<h2>Vision & Mission</h2>
 
