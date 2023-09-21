@@ -35,6 +35,7 @@
 	.container {
 		margin: 0 auto;
 		width: 80%;
+		margin-block: 1rem;
 		/* background: red; */
 	}
 
@@ -76,6 +77,7 @@
 	}
 	.content {
 		z-index: 3;
+		margin-block: 1rem;
 	}
 	img {
 		width: 0px;

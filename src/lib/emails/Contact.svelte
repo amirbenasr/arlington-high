@@ -1,25 +1,39 @@
-<script>
-	import { Button, Hr, Html, Text } from 'svelte-email';
+<script lang="ts">
+	import type { FormSchema } from '$lib/components/FormSchema';
+	import { Button, Hr, Html, Text, Column, Heading } from 'svelte-email';
 
-	export let name = 'World';
-	export let email = 'ex@ex.com';
-	export let subject = 'ex@ex.com';
-	export let phone = '000000';
+	export let form: FormSchema;
 </script>
 
 <Html lang="en">
+	<Heading>Parent Informations</Heading>
 	<Text>
-		Name : {name} ,
+		Name : {form.name} ,
 	</Text>
+	<Hr />
+
 	<Text>
-		Email : {email}
+		Email : {form.email}
 	</Text>
+	<Hr />
+
 	<Text>
-		Subject: {subject}
+		Phone : {form.mobile}
 	</Text>
+	<Hr />
+	<Heading>Student Informations</Heading>
 	<Text>
-		Phone: {phone}
+		FullName : {form.sname}
 	</Text>
+	<Hr />
+	<Text>
+		Birth Date : {form.sdob}
+	</Text>
+	<Hr />
+	<Text>
+		Education Level : {form.edlevel}
+	</Text>
+	<Hr />
 	<Hr />
 	<Button href="https://arlington-high.com/">Visit Arlington-High</Button>
 </Html>

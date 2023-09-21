@@ -1,64 +1,72 @@
 <script>
 	import Button from '$lib/components/Button.svelte';
 	import Pagelayout from '$lib/components/Pagelayout.svelte';
-	import LL from '$i18n/i18n-svelte';
-	import { base } from '$app/paths';
-	import { locale } from '$i18n/i18n-svelte';
 	import { superForm } from 'sveltekit-superforms/client';
 	import { enhance } from '$app/forms';
+	import { page } from '$app/stores';
 
 	export let data;
+	export let form;
 
 	// Client API:
-	const { form, errors, constraints } = superForm(data.form);
+	const { form: _form, errors, constraints } = superForm(data.form);
 </script>
 
 <Pagelayout title="Admissions">
 	<div class="page">
-		<div class="form">
+		<div class="_form">
+			{#if $page.status == 400}
+				<h3 style="background-color: red;color:white">Verify your credentials</h3>
+			{/if}
+
+			{#if form?.success}
+				<h3 style="background-color: green;color:white">Application Sent Successfully!</h3>
+			{/if}
+			<h2 style="padding-block: 1rem;">ONLINE STUDENT APPLICATION</h2>
+
 			<form method="POST" use:enhance>
-				<h3>Parent information</h3>
+				<h3>Parent informations</h3>
 				<div class="group">
-					<div class="form-group">
+					<div class="_form-group">
 						<label for="name">Name</label>
-						<input type="text" name="name" bind:value={$form.name} />
+						<input type="text" name="name" bind:value={$_form.name} />
 						{#if $errors.name}<span class="invalid">{$errors.name[0]}</span>{/if}
 					</div>
-					<div class="form-group">
+					<div class="_form-group">
 						<label for="email">E-mail</label>
 						<input
 							type="email"
 							name="email"
 							placeholder="someone@gmail.com"
-							bind:value={$form.email}
+							bind:value={$_form.email}
 						/>
 						{#if $errors.email}<span class="invalid">{$errors.email}</span>{/if}
 					</div>
-					<div class="form-group">
+					<div class="_form-group">
 						<label for="phone">Phone number</label>
-						<input type="number" name="mobile" bind:value={$form.mobile} />
+						<input type="number" name="mobile" bind:value={$_form.mobile} />
 						{#if $errors.mobile}<span class="invalid">{$errors.mobile}</span>{/if}
 					</div>
-					<div class="form-group">
+					<div class="_form-group">
 						<label for="zipcode">Zip Code</label>
-						<input type="number" name="zipcode" bind:value={$form.zipcode} />
+						<input type="number" name="zipcode" bind:value={$_form.zipcode} />
 					</div>
 				</div>
-				<h3>Student information</h3>
+				<h3>Student informations</h3>
 				<div class="group">
-					<div class="form-group">
+					<div class="_form-group">
 						<label for="sname">Name</label>
-						<input type="text" name="sname" bind:value={$form.sname} />
+						<input type="text" name="sname" bind:value={$_form.sname} />
 						{#if $errors.sname}<span class="invalid">{$errors.sname}</span>{/if}
 					</div>
-					<div class="form-group">
+					<div class="_form-group">
 						<label for="sdob">Date of birth</label>
-						<input type="date" name="sdob" bind:value={$form.sdob} />
+						<input type="date" name="sdob" bind:value={$_form.sdob} />
 						{#if $errors.sdob}<span class="invalid">{$errors.sdob}</span>{/if}
 					</div>
-					<div class="form-group">
+					<div class="_form-group">
 						<label for="edlevel">Level of Education </label>
-						<select name="edlevel" id="edlevel" bind:value={$form.edlevel}>
+						<select name="edlevel" id="edlevel" bind:value={$_form.edlevel}>
 							<option value="" disabled selected>Select your option</option>
 							<option value="1ère année secondaire">1ère année secondaire</option>
 							<option value="2ème année secondaire">2ème année secondaire</option>
@@ -68,17 +76,17 @@
 						{#if $errors.edlevel}<span class="invalid">{$errors.edlevel}</span>{/if}
 					</div>
 				</div>
-				<h3>Appointment Information</h3>
+				<h3>Appointment In_formation</h3>
 				<div class="group">
-					<div class="form-group">
+					<div class="_form-group">
 						<label for="name">Date of Appointment</label>
-						<input type="datetime-local" name="sname" bind:value={$form.sname} />
+						<input type="datetime-local" name="sname" bind:value={$_form.sname} />
 					</div>
 				</div>
 				<div class="group">
-					<div class="form-group">
+					<div class="_form-group">
 						<label for="questions">Questions?</label>
-						<textarea name="questions" id="questions" bind:value={$form.questions} />
+						<textarea name="questions" id="questions" bind:value={$_form.questions} />
 					</div>
 				</div>
 				<div><button>Submit</button></div>
@@ -115,22 +123,22 @@
 		freshman, transfer). Check if there are any additional documents or prerequisites needed for
 		consideration.
 	</p>
-	<h2>Attend an Information Session</h2>
+	<h2>Attend an In_formation Session</h2>
 	<p>
-		Join us for an information session where you can learn more about Arlington High school, our
+		Join us for an in_formation session where you can learn more about Arlington High school, our
 		educational philosophy, unique programs, and the dynamic learning environment we offer. These
-		sessions provide valuable insights and help you make an informed decision.
+		sessions provide valuable insights and help you make an in_formed decision.
 	</p> -->
-	<!-- <h2>Submit an Online Form Application</h2>
+	<!-- <h2>Submit an Online _form Application</h2>
 	<p>
-		Access our secure online application form and provide the required information, including
+		Access our secure online application _form and provide the required in_formation, including
 		personal details, academic history, extracurricular involvement, and any supporting documents
 		(e.g., transcripts, recommendation letters, essays). Make sure to double-check your application
 		for accuracy before submitting.
 	</p> -->
 
 	<!-- <iframe
-		src="https://docs.google.com/forms/d/e/1FAIpQLSeeWHfYrtYfXACLthLNo_h3DL93WvPlbyGqqtmvbLlbJR-a8w/viewform?embedded=true"
+		src="https://docs.google.com/_forms/d/e/1FAIpQLSeeWHfYrtYfXACLthLNo_h3DL93WvPlbyGqqtmvbLlbJR-a8w/view_form?embedded=true"
 		width="100%"
 		height="956"
 		frameborder="0"
@@ -190,7 +198,7 @@
 		flex-direction: column;
 		align-items: center;
 	}
-	.form {
+	._form {
 		width: 90%;
 		flex: 1 1 80%;
 		margin: 0 auto !important;
