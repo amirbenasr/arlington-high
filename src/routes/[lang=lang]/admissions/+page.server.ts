@@ -59,7 +59,7 @@ export const actions = {
 				});
 				const options = {
 					from: 'contact@educaus.net',
-					to: 'amirbennasr@gmail.com',
+					to: 'contact@arlington-high.com',
 					subject: 'Student Application',
 					html: emailHtml
 				};
