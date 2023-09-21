@@ -7,16 +7,18 @@
 </script>
 
 <div class="layout">
-	<header>
-		<div class="banner">
-			<img class="util" class:top src={image} alt="" srcset="" />
-		</div>
+	{#if image}
+		<header>
+			<div class="banner">
+				<img class="util" class:top src={image} alt="" srcset="" />
+			</div>
 
-		<div class="content">
-			<!-- <h3>{title}</h3> -->
-			<h1>{title}</h1>
-		</div>
-	</header>
+			<div class="content">
+				<!-- <h3>{title}</h3> -->
+				<h1>{title}</h1>
+			</div>
+		</header>
+	{/if}
 
 	<div class="container">
 		<slot />

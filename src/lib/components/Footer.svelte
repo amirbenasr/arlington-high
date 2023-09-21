@@ -49,7 +49,7 @@
 			<div class="section__title">Socials</div>
 			<div class="section__subtitle">
 				<a href="https://www.facebook.com/arlington.highschool.tn">Facebook</a>
-				<!-- <a href="/">Instagram</a> -->
+				<a href="https://www.instagram.com/arlington_highschool">Instagram</a>
 				<!-- <a href="/">Twitter</a> -->
 			</div>
 		</div>

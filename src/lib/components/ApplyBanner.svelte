@@ -50,7 +50,7 @@
 		<a href="https://www.facebook.com/arlington.highschool.tn">
 			<i class="fa-brands fa-facebook" />
 		</a>
-		<a href="https://www.facebook.com/arlington.highschool.tn">
+		<a href="https://www.instagram.com/arlington_highschool">
 			<i class="fa-brands fa-instagram" />
 		</a>
 		<!-- <a href="https://www.facebook.com/arlington.highschool.tn">
