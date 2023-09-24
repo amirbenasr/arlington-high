@@ -147,7 +147,7 @@
 							you.
 						</p>
 					</div>
-					<Button title="Apply now" link="{base}/{$locale}/contact" style="cta" />
+					<Button title="Apply now" link="{base}/{$locale}/admissions" style="cta" />
 				</div>
 			</div>
 		</div>
