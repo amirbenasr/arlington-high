@@ -16,6 +16,7 @@
 	import { base } from '$app/paths';
 	import { locale } from '$i18n/i18n-svelte';
 	import slogan from '$lib/images/slogan.svg';
+	import Articles from '$lib/components/Articles.svelte';
 	const cards = [
 		{
 			icon: 'fa-school',
@@ -117,7 +118,7 @@
 					thing. at the right time</span
 				>
 
-				<Button title="Apply Now" link="{base}/{$locale}/contact" style="outlined" />
+				<Button title="Apply Now" link="{base}/{$locale}/admissions" style="outlined" />
 			</div>
 		</div>
 
@@ -152,6 +153,7 @@
 			</div>
 		</div>
 	</div>
+	<Articles />
 	<Footer />
 </div>
 
@@ -294,14 +296,19 @@
 		img.student_girl {
 			object-position: center !important ;
 		}
+		.content__title {
+			font-size: 2.5rem !important;
+			line-height: 3rem !important;
+		}
 	}
 	@media (width < 1200px) {
 		.img.student {
 			display: none !important;
 		}
-		/* .img {
-			display: none !important;
-		} */
+		.content__title {
+			font-size: 2.5rem !important;
+			line-height: 3rem !important;
+		}
 	}
 	@media (width < 1000px) {
 		span {
@@ -309,8 +316,8 @@
 		}
 		.content__title {
 			font-weight: bold;
-			font-size: 3.5em !important;
-			line-height: 4.2rem;
+			font-size: 2.5em !important;
+			line-height: 3rem !important;
 		}
 		.content__description {
 			font-weight: 400;
@@ -407,7 +414,7 @@
 	}
 	.content__title {
 		font-weight: bold;
-		font-size: 4.5em;
+		font-size: 4rem;
 		line-height: 4.2rem;
 	}
 	.content__description {
@@ -422,7 +429,7 @@
 
 	.hero {
 		display: flex !important;
-		height: calc(100vh - 94px) !important;
+		height: calc(100vh - 150px) !important;
 		width: 100%;
 		position: relative;
 	}

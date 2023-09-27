@@ -101,7 +101,7 @@
 	}
 	.services__description {
 		display: flex;
-		height: 10rem;
+		/* height: 10rem; */
 		flex-direction: column;
 		gap: 0.5rem;
 		padding: 0.5rem;
