@@ -38,6 +38,7 @@
 		"gsap": "^3.12.2",
 		"nodemailer": "^6.9.5",
 		"svelte-email": "^0.0.4",
+		"svelte-preprocess": "^5.0.4",
 		"typesafe-i18n": "^5.26.2"
 	}
 }
