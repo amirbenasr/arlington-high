@@ -20,7 +20,7 @@
 
 <main>
 	{#if post}
-		<h1>{post.title.rendered}</h1>
+		<h1>{@html post.title.rendered}</h1>
 		<div>{@html post.content.rendered}</div>
 	{:else}
 		<p>Loading...</p>
@@ -32,6 +32,9 @@
 	@import '@wordpress/block-library/build-style/style.css';
 	@import '@wordpress/block-library/build-style/theme.css';
 
+	:global(.wp-block-columns) {
+		gap: 1rem;
+	}
 	@media (width < 600px) {
 		:global(.wp-block-media-text__content) {
 			padding: 0 !important;

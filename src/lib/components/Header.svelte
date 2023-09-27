@@ -61,7 +61,7 @@
 
 	<div class="menu_button">
 		<a on:click={() => toggleMenu()}>
-			<i class="menu_button fa fa-bars fa-xl" />
+			<i class="menu_button fa fa-bars fa-xl" style="color: var(--primary-color);" />
 		</a>
 	</div>
 
@@ -162,6 +162,7 @@
 		padding: 1rem;
 	}
 	.menu_button {
+		cursor: pointer;
 		position: relative !important;
 	}
 </style>

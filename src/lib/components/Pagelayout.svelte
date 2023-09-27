@@ -33,6 +33,7 @@
 		}
 	}
 	.container {
+		padding-inline: 0.5rem;
 		margin: 0 auto;
 		width: 80%;
 		margin-block: 1rem;

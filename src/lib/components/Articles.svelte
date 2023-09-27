@@ -62,7 +62,7 @@
 			{#each posts as post (post.id)}
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<!-- svelte-ignore a11y-no-static-element-interactions -->
-				<div on:click={() => navigateToArticle(post.id)} class="">
+				<div on:click={() => navigateToArticle(post.id)} class="" style="">
 					<article class="article">
 						{#if post.tagName}
 							<p class="featured-marker">{post.tagName}</p>
@@ -70,9 +70,9 @@
 						{#if post.featured_media}
 							<img src={post.featured_media_url} alt={post.title.rendered} class="featured-image" />
 						{/if}
-						<div class="" style=" color:var(--primary-color); padding:5px;">
-							<h2 style="color:var(--primary-color)">
-								{post.title.rendered}
+						<div class="article_title_container" style=" color:var(--primary-color);">
+							<h2 class="article_title">
+								{@html post.title.rendered}
 							</h2>
 						</div>
 					</article>
@@ -83,11 +83,30 @@
 </div>
 
 <style>
+	.article_title_container {
+		display: -webkit-box !important;
+		-webkit-box-orient: vertical;
+
+		overflow: hidden !important;
+		line-clamp: 3 !important;
+		text-overflow: ellipsis !important;
+	}
+	h2 {
+		color: var(--primary-color);
+		overflow: hidden !important;
+		text-overflow: ellipsis !important;
+		font-size: 1.3rem;
+	}
 	@media (width > 780px) {
+		h2 {
+			font-size: 1.5rem;
+		}
 		.articles {
 			display: grid;
 			grid-template-columns: 1fr 1fr !important;
+			width: 100% !important;
 		}
+
 		main {
 			width: 80%;
 		}
@@ -104,6 +123,8 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 1rem;
+		width: 80%;
+		margin: 0 auto;
 	}
 	img {
 		height: 300px !important;
