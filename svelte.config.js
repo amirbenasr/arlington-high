@@ -1,6 +1,6 @@
 import adapter from '@sveltejs/adapter-vercel';
 // import { vitePreprocess } from '@sveltejs/kit/vite';
-import preprocess from 'svelte-preprocess';
+import preprocess from 'svelte-preprocess@5.0.4_postcss@8.4.29_sass@1.68.0_svelte@4.2.0_typescript@5.2.2/node_modules/svelte-preprocess/dist/index.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
