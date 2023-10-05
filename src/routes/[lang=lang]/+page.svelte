@@ -17,6 +17,7 @@
 	import { locale } from '$i18n/i18n-svelte';
 	import slogan from '$lib/images/slogan.svg';
 	import Articles from '$lib/components/Articles.svelte';
+	import Socials from '$lib/components/Socials.svelte';
 	const cards = [
 		{
 			icon: 'fa-school',
@@ -154,6 +155,11 @@
 		</div>
 	</div>
 	<Articles />
+	<Socials />
+
+	<!-- <section class="socials">
+		<h1>Our socials</h1>
+	</section> -->
 	<Footer />
 </div>
 
