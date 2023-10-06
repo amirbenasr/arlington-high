@@ -27,40 +27,48 @@
 	});
 </script>
 
-<div class="banner" bind:this={banner}>
-	<div class="banner__email">
-		<a href="mailto:application@arlington-high.com">
-			<span> <i class="fa-regular fa-envelope" /> application@arlington-high.com</span>
-		</a>
-		<hr />
-		<!-- +216 93 169 192: +216 98 110 698 / +216 98 110 699 -->
+<div class="col">
+	<div class="banner" bind:this={banner}>
+		<div id="google_translate_element" />
 
-		<span>
-			<i class="fa-solid fa-phone" /> <a href="tel:+21698110698">98110698</a> <span>|</span>
-			<a href="tel:+21698110698">98110699</a></span
-		>
-	</div>
+		<div class="banner__email">
+			<a href="mailto:application@arlington-high.com">
+				<span> <i class="fa-regular fa-envelope" /> application@arlington-high.com</span>
+			</a>
+			<hr />
+			<!-- +216 93 169 192: +216 98 110 698 / +216 98 110 699 -->
 
-	<!-- <div class="banner__details">
+			<span>
+				<i class="fa-solid fa-phone" /> <a href="tel:+21698110698">98110698</a> <span>|</span>
+				<a href="tel:+21698110698">98110699</a></span
+			>
+		</div>
+
+		<!-- <div class="banner__details">
 		<span>Pre-Enrollement Phase 1</span>
 		<Button title="Apply now" link="#" style="outlined" primary={false} />
 	</div> -->
-	<div class="socials">
-		<span>Socials</span>
-		<a href="https://www.facebook.com/arlington.highschool.tn">
-			<i class="fa-brands fa-facebook" />
-		</a>
-		<a href="https://www.instagram.com/arlington_highschool">
-			<i class="fa-brands fa-instagram" />
-		</a>
-		<!-- <a href="https://www.facebook.com/arlington.highschool.tn">
+		<div class="socials">
+			<span>Socials</span>
+			<a href="https://www.facebook.com/arlington.highschool.tn">
+				<i class="fa-brands fa-facebook" />
+			</a>
+			<a href="https://www.instagram.com/arlington_highschool">
+				<i class="fa-brands fa-instagram" />
+			</a>
+			<!-- <a href="https://www.facebook.com/arlington.highschool.tn">
 			<i class="fa-brands fa-twitter" />
 		</a> -->
+		</div>
+		<LangSwitcher />
 	</div>
-	<LangSwitcher />
 </div>
 
 <style>
+	.col {
+		display: flex;
+		flex-direction: column;
+	}
 	@media (width < 750px) {
 		.banner {
 			text-align: center;
