@@ -75,10 +75,15 @@
 	img {
 		max-width: 100%;
 		max-height: 100%;
-		filter: grayscale(100%);
 		transition: all 300ms;
 		&:hover {
 			filter: grayscale(0%);
+		}
+	}
+
+	@media (width > 780px) {
+		img {
+			filter: grayscale(100%);
 		}
 	}
 
